@@ -1,0 +1,153 @@
+# Parameters Are Knowledge
+
+## The Problem
+
+We have an autograd engine that can compute gradients. But gradients of *what*? We need actual numbers to compute with — the model's **parameters**.
+
+Parameters are the thousands of numbers that the model will **tune during training** to get good at prediction. Before training, they're random. After training, they encode everything the model has "learned."
+
+## The Hyperparameters (Lines 75–79)
+
+```python
+# Lines 75-79 of microgpt.py
+n_embd = 16     # embedding dimension
+n_head = 4      # number of attention heads
+n_layer = 1     # number of layers
+block_size = 8  # maximum sequence length
+head_dim = n_embd // n_head  # dimension of each head = 4
+```
+
+These are **hyperparameters** — settings that the programmer chooses, not things the model learns. Think of them as the blueprint:
+
+| Hyperparameter | Value | What it controls |
+|----------------|-------|-----------------|
+| `n_embd` | 16 | How "rich" each token's representation is |
+| `n_head` | 4 | How many different "perspectives" in attention |
+| `n_layer` | 1 | How many times we repeat the attention+MLP block |
+| `block_size` | 8 | Maximum number of characters the model can see |
+| `head_dim` | 4 | Size of each attention head (16 / 4 = 4) |
+
+In real GPT models, these numbers are much larger (GPT-2: `n_embd=768, n_head=12, n_layer=12`). The *structure* is identical.
+
+## Creating Parameter Matrices (Line 80)
+
+```python
+# Line 80 of microgpt.py
+matrix = lambda nout, nin, std=0.02: [[Value(random.gauss(0, std)) for _ in range(nin)] for _ in range(nout)]
+```
+
+This helper function creates a 2D grid (matrix) of `Value` objects, each initialized with a small random number drawn from a Gaussian (bell curve) distribution:
+
+```
+random.gauss(0, 0.02) → a random number near 0, usually between -0.06 and +0.06
+```
+
+For example, `matrix(3, 2)` creates:
+
+```
+[
+  [Value(0.01), Value(-0.03)],   ← row 0
+  [Value(0.02), Value(0.01)],    ← row 1
+  [Value(-0.01), Value(0.04)],   ← row 2
+]
+```
+
+A 3×2 grid of random `Value` objects.
+
+### Why random? Why small?
+
+- **Random:** If all parameters started at the same value, they'd all receive the same gradient and update in lockstep forever. Randomness breaks this symmetry.
+- **Small (std=0.02):** Large initial values cause numerical instability. Starting near zero is safe.
+- **Gaussian:** Draws values from a bell curve centered at 0. Most values are close to 0, rarely far from it.
+
+## The State Dictionary (Lines 81–89)
+
+```python
+# Lines 81-89 of microgpt.py
+state_dict = {
+    'wte': matrix(vocab_size, n_embd),   # token embeddings: 27 × 16
+    'wpe': matrix(block_size, n_embd),    # position embeddings: 8 × 16
+    'lm_head': matrix(vocab_size, n_embd), # output layer: 27 × 16
+}
+for i in range(n_layer):
+    state_dict[f'layer{i}.attn_wq'] = matrix(n_embd, n_embd)    # 16 × 16
+    state_dict[f'layer{i}.attn_wk'] = matrix(n_embd, n_embd)    # 16 × 16
+    state_dict[f'layer{i}.attn_wv'] = matrix(n_embd, n_embd)    # 16 × 16
+    state_dict[f'layer{i}.attn_wo'] = matrix(n_embd, n_embd, std=0)  # 16 × 16
+    state_dict[f'layer{i}.mlp_fc1'] = matrix(4 * n_embd, n_embd)  # 64 × 16
+    state_dict[f'layer{i}.mlp_fc2'] = matrix(n_embd, 4 * n_embd, std=0)  # 16 × 64
+```
+
+The `state_dict` is a Python dictionary mapping names to matrices. Each matrix serves a specific role:
+
+| Name | Shape | Purpose |
+|------|-------|---------|
+| `wte` | 27 × 16 | **Token embedding** — gives each of 27 tokens a 16-dimensional "meaning" |
+| `wpe` | 8 × 16 | **Position embedding** — encodes position (1st, 2nd, ..., 8th) |
+| `lm_head` | 27 × 16 | **Output layer** — converts the model's internal state back to token predictions |
+| `attn_wq` | 16 × 16 | **Query** weights for attention |
+| `attn_wk` | 16 × 16 | **Key** weights for attention |
+| `attn_wv` | 16 × 16 | **Value** weights for attention (not `Value` class — confusing, but standard terminology) |
+| `attn_wo` | 16 × 16 | **Output** projection for attention |
+| `mlp_fc1` | 64 × 16 | **Expand** layer in the MLP block (16 → 64) |
+| `mlp_fc2` | 16 × 64 | **Compress** layer in the MLP block (64 → 16) |
+
+Don't worry about what queries, keys, and values mean yet — that's coming in the attention lesson. For now, just understand that each matrix is a grid of learnable numbers.
+
+### Why `std=0` for some matrices?
+
+Notice `attn_wo` and `mlp_fc2` are initialized with `std=0` — all zeros. These are **output projection** matrices. Initializing them to zero means the attention and MLP blocks initially do nothing (they output zeros, so the residual connection just passes the input through). This is a stability trick for training.
+
+## Flattening the Parameters (Line 89)
+
+```python
+# Line 89 of microgpt.py
+params = [p for mat in state_dict.values() for row in mat for p in row]
+print(f"num params: {len(params)}")
+```
+
+This flattens all matrices into a single flat list: every individual `Value` in every row of every matrix.
+
+```
+state_dict:
+  'wte':  [[v, v, ...], [v, v, ...], ...]  (27 rows × 16 cols = 432 values)
+  'wpe':  [[v, v, ...], [v, v, ...], ...]  (8 rows × 16 cols = 128 values)
+  ...
+
+params: [v, v, v, v, v, v, v, ...]  (all values in one flat list)
+```
+
+Why flatten? Because the optimizer needs to loop over **all** parameters to update them. A flat list makes this trivial.
+
+### How many parameters?
+
+```
+wte:     27 × 16  =   432
+wpe:      8 × 16  =   128
+lm_head: 27 × 16  =   432
+attn_wq: 16 × 16  =   256
+attn_wk: 16 × 16  =   256
+attn_wv: 16 × 16  =   256
+attn_wo: 16 × 16  =   256
+mlp_fc1: 64 × 16  = 1,024
+mlp_fc2: 16 × 64  = 1,024
+─────────────────────────
+Total:               4,064 parameters
+```
+
+4,064 `Value` objects, each a small random number, each tracking its gradient. By comparison, GPT-2 has 124 million parameters, and GPT-4 is rumored to have over a trillion.
+
+## Terminology
+
+| Term | Meaning |
+|------|---------|
+| **Parameters** | The learnable numbers in the model (weights and biases) |
+| **Hyperparameters** | Settings chosen by the programmer (n_embd, n_head, etc.) |
+| **State dict** | A dictionary mapping names to parameter matrices |
+| **Weight matrix** | A 2D grid of parameters used in a linear transformation |
+| **Initialization** | The strategy for setting initial parameter values |
+| **Gaussian** | A bell-curve distribution; most values cluster near the mean |
+
+## Next
+
+These parameters are just random numbers right now. The architecture (the `gpt()` function) defines how to *use* them to make predictions. Let's start with the simplest step: [embeddings](./01-embeddings.md).
