@@ -1,0 +1,137 @@
+site_name: "MicroGPT: A First-Principles Course"
+site_description: "Reverse-engineer every line of a 200-line GPT from scratch. From 10th-grade math to building your first LLM."
+site_url: ""
+repo_url: https://github.com/mkhaledelhelaly/microgpt
+repo_name: mkhaledelhelaly/microgpt
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: deep purple
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - search.suggest
+    - search.highlight
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  # Math (KaTeX)
+  - pymdownx.arithmatex:
+      generic: true
+  # Diagrams (Mermaid)
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  # Tabs
+  - pymdownx.tabbed:
+      alternate_style: true
+  # Admonitions
+  - admonition
+  - pymdownx.details
+  # Code highlighting
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  # Formatting
+  - pymdownx.mark
+  - pymdownx.critic
+  - pymdownx.keys
+  - attr_list
+  - md_in_html
+  - def_list
+  - tables
+  - toc:
+      permalink: true
+  # Emoji
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mkhaledelhelaly
+
+nav:
+  - Home: index.md
+  - "Module 0: The Big Picture":
+    - "0.0 What Is a Language Model?": 00-the-big-picture/00-what-is-a-language-model.md
+    - "0.1 The 200-Line Map": 00-the-big-picture/01-the-200-line-map.md
+    - "0.2 The Learning Machine Analogy": 00-the-big-picture/02-the-learning-machine-analogy.md
+  - "Module 1: Data & Tokenization":
+    - "1.0 The Dataset": 01-data-and-tokenization/00-the-dataset.md
+    - "1.1 Characters as Numbers": 01-data-and-tokenization/01-characters-as-numbers.md
+    - "1.2 The BOS Token": 01-data-and-tokenization/02-the-bos-token.md
+  - "Module 2: Calculus & Autograd":
+    - "2.0 Why We Need Derivatives": 02-calculus-and-autograd/00-why-we-need-derivatives.md
+    - "2.1 The Chain Rule": 02-calculus-and-autograd/01-the-chain-rule.md
+    - "2.2 The Value Class": 02-calculus-and-autograd/02-the-value-class.md
+    - "2.3 Forward Pass": 02-calculus-and-autograd/03-forward-pass.md
+    - "2.4 Backward Pass": 02-calculus-and-autograd/04-backward-pass.md
+    - "2.5 Building a Computation Graph": 02-calculus-and-autograd/05-building-a-computation-graph.md
+  - "Module 3: The Architecture":
+    - "3.0 Parameters Are Knowledge": 03-the-architecture/00-parameters-are-knowledge.md
+    - "3.1 Embeddings": 03-the-architecture/01-embeddings.md
+    - "3.2 Linear Layers": 03-the-architecture/02-linear-layers.md
+    - "3.3 Softmax": 03-the-architecture/03-softmax.md
+    - "3.4 Normalization (RMSNorm)": 03-the-architecture/04-normalization.md
+    - "3.5 Attention": 03-the-architecture/05-attention.md
+    - "3.6 Multi-Head Attention": 03-the-architecture/06-multi-head-attention.md
+    - "3.7 Residual Connections": 03-the-architecture/07-residual-connections.md
+    - "3.8 The MLP Block": 03-the-architecture/08-the-mlp-block.md
+    - "3.9 The Full GPT Function": 03-the-architecture/09-the-full-gpt-function.md
+  - "Module 4: Training":
+    - "4.0 What Is Training?": 04-training/00-what-is-training.md
+    - "4.1 The Loss Function": 04-training/01-the-loss-function.md
+    - "4.2 Backpropagation": 04-training/02-backpropagation.md
+    - "4.3 Gradient Descent": 04-training/03-gradient-descent.md
+    - "4.4 The Adam Optimizer": 04-training/04-the-adam-optimizer.md
+    - "4.5 The Training Loop": 04-training/05-the-training-loop.md
+  - "Module 5: Inference & Generation":
+    - "5.0 Generating Text": 05-inference/00-generating-text.md
+    - "5.1 Temperature and Sampling": 05-inference/01-temperature-and-sampling.md
+    - "5.2 The Complete Picture": 05-inference/02-the-complete-picture.md
+  - Appendix:
+    - Glossary: appendix/glossary.md
+    - "Math Refresher": appendix/math-refresher.md
