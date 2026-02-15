@@ -99,7 +99,7 @@ Using the trained model to generate new text. Temperature, sampling, and the com
 
 ## Based On
 
-This course is built around [`microgpt.py`](https://github.com/karpathy/microgpt) by **Andrej Karpathy** — a complete GPT language model in just **200 lines** of pure Python using only the standard library.
+This course is built around [`microgpt.py`](https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95) by **Andrej Karpathy** — a complete GPT language model in just **200 lines** of pure Python using only the standard library.
 
 It implements:
 
