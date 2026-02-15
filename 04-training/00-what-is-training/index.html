@@ -10,15 +10,15 @@
 </span><span id=__span-1-4><a id=__codelineno-1-4 name=__codelineno-1-4 href=#__codelineno-1-4></a>&#39;l&#39;: 15.2%   &#39;m&#39;: 12.8%   &#39;r&#39;: 10.1%   &#39;v&#39;: 9.3%   &#39;s&#39;: 8.7%
 </span><span id=__span-1-5><a id=__codelineno-1-5 name=__codelineno-1-5 href=#__codelineno-1-5></a>&#39;d&#39;: 7.2%    &#39;a&#39;: 5.1%    &#39;i&#39;: 4.8%    ...
 </span></code></pre></div> <p>The model learned: after 'e' in names, letters like 'l', 'm', 'r' are most common (elena, emma, erin...).</p> </div> </div> </div> <h2 id=the-training-recipe>The Training Recipe<a class=headerlink href=#the-training-recipe title="Permanent link">&para;</a></h2> <p>Each training step follows this exact recipe:</p> <pre class=mermaid><code>flowchart LR
-    S["1. SAMPLE\na name"] --&gt; F["2. FORWARD\npredict each\nnext character"]
-    F --&gt; L["3. LOSS\nmeasure\nhow wrong"]
-    L --&gt; B["4. BACKWARD\ncompute\ngradients"]
-    B --&gt; U["5. UPDATE\nnudge\nparameters"]
+    S["1. SAMPLE&lt;br&gt;a name"] --&gt; F["2. FORWARD&lt;br&gt;predict each&lt;br&gt;next character"]
+    F --&gt; L["3. LOSS&lt;br&gt;measure&lt;br&gt;how wrong"]
+    L --&gt; B["4. BACKWARD&lt;br&gt;compute&lt;br&gt;gradients"]
+    B --&gt; U["5. UPDATE&lt;br&gt;nudge&lt;br&gt;parameters"]
     U --&gt; |"repeat ×500"| S
 
-    style S fill:#1de9b6,stroke:#0db99a,color:#fff
-    style L fill:#64ffda,stroke:#4dd4b0,color:#fff
-    style U fill:#1de9b6,stroke:#0db99a,color:#000</code></pre> <h2 id=the-training-loop-lines-153184-overview>The Training Loop (Lines 153–184, Overview)<a class=headerlink href=#the-training-loop-lines-153184-overview title="Permanent link">&para;</a></h2> <div class="language-python highlight"><span class=filename>microgpt.py — Lines 152-184 (simplified)</span><pre><span></span><code><span id=__span-2-1><a id=__codelineno-2-1 name=__codelineno-2-1 href=#__codelineno-2-1></a><span class=n>num_steps</span> <span class=o>=</span> <span class=mi>500</span>
+    style S fill:#e0faf4,stroke:#1de9b6
+    style L fill:#e0faf4,stroke:#1de9b6
+    style U fill:#e0faf4,stroke:#1de9b6</code></pre> <h2 id=the-training-loop-lines-153184-overview>The Training Loop (Lines 153–184, Overview)<a class=headerlink href=#the-training-loop-lines-153184-overview title="Permanent link">&para;</a></h2> <div class="language-python highlight"><span class=filename>microgpt.py — Lines 152-184 (simplified)</span><pre><span></span><code><span id=__span-2-1><a id=__codelineno-2-1 name=__codelineno-2-1 href=#__codelineno-2-1></a><span class=n>num_steps</span> <span class=o>=</span> <span class=mi>500</span>
 </span><span id=__span-2-2><a id=__codelineno-2-2 name=__codelineno-2-2 href=#__codelineno-2-2></a><span class=k>for</span> <span class=n>step</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>num_steps</span><span class=p>):</span>
 </span><span id=__span-2-3><a id=__codelineno-2-3 name=__codelineno-2-3 href=#__codelineno-2-3></a>    <span class=c1># 1. Sample a document</span>
 </span><span id=__span-2-4><a id=__codelineno-2-4 name=__codelineno-2-4 href=#__codelineno-2-4></a>    <span class=n>doc</span> <span class=o>=</span> <span class=n>docs</span><span class=p>[</span><span class=n>step</span> <span class=o>%</span> <span class=nb>len</span><span class=p>(</span><span class=n>docs</span><span class=p>)]</span>

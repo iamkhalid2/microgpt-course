@@ -11,12 +11,12 @@
     D["d (10.0)"] --&gt; ADD
     ADD --&gt; RELU["relu → f (4.0)"]
 
-    style A fill:#1de9b6,stroke:#0db99a,color:#fff
-    style B fill:#1de9b6,stroke:#0db99a,color:#fff
-    style D fill:#1de9b6,stroke:#0db99a,color:#fff
-    style MUL fill:#12a889,stroke:#0a7d68,color:#fff
-    style ADD fill:#0d8872,stroke:#085c4e,color:#fff
-    style RELU fill:#1de9b6,stroke:#0db99a,color:#000</code></pre> </div> </div> </div> <p>Each arrow is a <code>Value</code> node. Each operation creates a new node.</p> <h2 id=what-gets-recorded>What Gets Recorded<a class=headerlink href=#what-gets-recorded title="Permanent link">&para;</a></h2> <p>During the forward pass, each new <code>Value</code> stores:</p> <ol> <li>The computed result (<code>.data</code>)</li> <li>References to the inputs (<code>._children</code>)</li> <li>The local derivatives (<code>._local_grads</code>)</li> </ol> <div class="admonition example"> <p class=admonition-title>For node <code>c = a * b</code></p> <div class="language-python highlight"><pre><span></span><code><span id=__span-1-1><a id=__codelineno-1-1 name=__codelineno-1-1 href=#__codelineno-1-1></a><span class=n>c</span><span class=o>.</span><span class=n>data</span> <span class=o>=</span> <span class=o>-</span><span class=mf>6.0</span>
+    style A fill:#e0faf4,stroke:#1de9b6
+    style B fill:#e0faf4,stroke:#1de9b6
+    style D fill:#e0faf4,stroke:#1de9b6
+    style MUL fill:#e0faf4,stroke:#1de9b6
+    style ADD fill:#e0faf4,stroke:#1de9b6
+    style RELU fill:#e0faf4,stroke:#1de9b6</code></pre> </div> </div> </div> <p>Each arrow is a <code>Value</code> node. Each operation creates a new node.</p> <h2 id=what-gets-recorded>What Gets Recorded<a class=headerlink href=#what-gets-recorded title="Permanent link">&para;</a></h2> <p>During the forward pass, each new <code>Value</code> stores:</p> <ol> <li>The computed result (<code>.data</code>)</li> <li>References to the inputs (<code>._children</code>)</li> <li>The local derivatives (<code>._local_grads</code>)</li> </ol> <div class="admonition example"> <p class=admonition-title>For node <code>c = a * b</code></p> <div class="language-python highlight"><pre><span></span><code><span id=__span-1-1><a id=__codelineno-1-1 name=__codelineno-1-1 href=#__codelineno-1-1></a><span class=n>c</span><span class=o>.</span><span class=n>data</span> <span class=o>=</span> <span class=o>-</span><span class=mf>6.0</span>
 </span><span id=__span-1-2><a id=__codelineno-1-2 name=__codelineno-1-2 href=#__codelineno-1-2></a><span class=n>c</span><span class=o>.</span><span class=n>_children</span> <span class=o>=</span> <span class=p>(</span><span class=n>a</span><span class=p>,</span> <span class=n>b</span><span class=p>)</span>
 </span><span id=__span-1-3><a id=__codelineno-1-3 name=__codelineno-1-3 href=#__codelineno-1-3></a><span class=n>c</span><span class=o>.</span><span class=n>_local_grads</span> <span class=o>=</span> <span class=p>(</span><span class=o>-</span><span class=mf>3.0</span><span class=p>,</span> <span class=mf>2.0</span><span class=p>)</span>   <span class=c1># (b.data, a.data)</span>
 </span></code></pre></div> </div> <div class="admonition example"> <p class=admonition-title>For node <code>e = c + d</code></p> <div class="language-python highlight"><pre><span></span><code><span id=__span-2-1><a id=__codelineno-2-1 name=__codelineno-2-1 href=#__codelineno-2-1></a><span class=n>e</span><span class=o>.</span><span class=n>data</span> <span class=o>=</span> <span class=mf>4.0</span>
