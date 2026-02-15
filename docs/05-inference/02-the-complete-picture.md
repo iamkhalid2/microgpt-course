@@ -70,8 +70,8 @@ flowchart TD
     TRAINED --> INF["Inference Loop"]
     INF --> NAMES["Generated Names"]
 
-    style DATA fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style TRAINED fill:#e67e22,stroke:#d35400,color:#fff
+    style DATA fill:#1de9b6,stroke:#0db99a,color:#fff
+    style TRAINED fill:#80ffe5,stroke:#5cd4bc,color:#fff
     style NAMES fill:#1de9b6,stroke:#0db99a,color:#000
 ```
 

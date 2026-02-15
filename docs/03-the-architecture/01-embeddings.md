@@ -72,8 +72,8 @@ flowchart LR
     POS --> ADD
     ADD --> X["x = 'e' at position 2\n(16 Values)"]
 
-    style TID fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style PID fill:#7c4dff,stroke:#5c3cbf,color:#fff
+    style TID fill:#1de9b6,stroke:#0db99a,color:#fff
+    style PID fill:#1de9b6,stroke:#0db99a,color:#fff
     style X fill:#1de9b6,stroke:#0db99a,color:#000
 ```
 

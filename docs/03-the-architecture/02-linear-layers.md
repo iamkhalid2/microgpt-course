@@ -75,7 +75,7 @@ flowchart LR
     X["x\n[x₀, x₁, x₂]"] --> ROW0["row 0: [w₀₀, w₀₁, w₀₂]\n→ dot product → y₀"]
     X --> ROW1["row 1: [w₁₀, w₁₁, w₁₂]\n→ dot product → y₁"]
 
-    style X fill:#7c4dff,stroke:#5c3cbf,color:#fff
+    style X fill:#1de9b6,stroke:#0db99a,color:#fff
     style ROW0 fill:#1de9b6,stroke:#0db99a,color:#000
     style ROW1 fill:#1de9b6,stroke:#0db99a,color:#000
 ```

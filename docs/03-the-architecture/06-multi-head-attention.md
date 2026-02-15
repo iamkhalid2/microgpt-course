@@ -26,7 +26,7 @@ flowchart LR
     H3 --> CAT
     CAT --> WO["linear(Wo)\n→ output (16 dims)"]
 
-    style Q fill:#7c4dff,stroke:#5c3cbf,color:#fff
+    style Q fill:#1de9b6,stroke:#0db99a,color:#fff
     style WO fill:#1de9b6,stroke:#0db99a,color:#000
 ```
 

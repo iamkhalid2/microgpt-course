@@ -40,11 +40,11 @@ f = e.relu()     # 4.0 (positive, so unchanged)
         D["d (10.0)"] --> ADD
         ADD --> RELU["relu → f (4.0)"]
 
-        style A fill:#7c4dff,stroke:#5c3cbf,color:#fff
-        style B fill:#7c4dff,stroke:#5c3cbf,color:#fff
-        style D fill:#7c4dff,stroke:#5c3cbf,color:#fff
-        style MUL fill:#5830d1,stroke:#3820a1,color:#fff
-        style ADD fill:#4623ba,stroke:#26138a,color:#fff
+        style A fill:#1de9b6,stroke:#0db99a,color:#fff
+        style B fill:#1de9b6,stroke:#0db99a,color:#fff
+        style D fill:#1de9b6,stroke:#0db99a,color:#fff
+        style MUL fill:#12a889,stroke:#0a7d68,color:#fff
+        style ADD fill:#0d8872,stroke:#085c4e,color:#fff
         style RELU fill:#1de9b6,stroke:#0db99a,color:#000
     ```
 
@@ -124,7 +124,7 @@ flowchart LR
     D --> ADD
     ADD --> RELU
 
-    style inputs fill:none,stroke:#7c4dff
+    style inputs fill:none,stroke:#1de9b6
     style ops fill:none,stroke:#1de9b6
 ```
 

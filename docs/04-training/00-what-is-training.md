@@ -45,8 +45,8 @@ flowchart LR
     B --> U["5. UPDATE\nnudge\nparameters"]
     U --> |"repeat ×500"| S
 
-    style S fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style L fill:#e74c3c,stroke:#c0392b,color:#fff
+    style S fill:#1de9b6,stroke:#0db99a,color:#fff
+    style L fill:#64ffda,stroke:#4dd4b0,color:#fff
     style U fill:#1de9b6,stroke:#0db99a,color:#000
 ```
 

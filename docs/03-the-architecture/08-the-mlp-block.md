@@ -17,8 +17,8 @@ flowchart LR
     ACT --> FC2["Linear\n64 → 16\n(compress)"]
     FC2 --> OUT["output\n(16 dims)"]
 
-    style X fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style ACT fill:#e74c3c,stroke:#c0392b,color:#fff
+    style X fill:#1de9b6,stroke:#0db99a,color:#fff
+    style ACT fill:#64ffda,stroke:#4dd4b0,color:#fff
     style OUT fill:#1de9b6,stroke:#0db99a,color:#000
 ```
 

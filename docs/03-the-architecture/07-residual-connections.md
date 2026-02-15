@@ -69,8 +69,8 @@ flowchart TD
     SAVE -- "skip connection" --> ADD
     ADD --> OUT["new x\n(original + new info)"]
 
-    style X fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style ADD fill:#e67e22,stroke:#d35400,color:#fff
+    style X fill:#1de9b6,stroke:#0db99a,color:#fff
+    style ADD fill:#80ffe5,stroke:#5cd4bc,color:#fff
     style OUT fill:#1de9b6,stroke:#0db99a,color:#000
 ```
 

@@ -98,8 +98,8 @@ flowchart LR
     A["🏔️ High Loss\n(positive slope)"] -- "step opposite\nto slope" --> B["📍 You are here"]
     B -- "step opposite\nto slope" --> C["🏞️ Low Loss\n(the valley)"]
 
-    style A fill:#e74c3c,stroke:#c0392b,color:#fff
-    style B fill:#e67e22,stroke:#d35400,color:#fff
+    style A fill:#64ffda,stroke:#4dd4b0,color:#fff
+    style B fill:#80ffe5,stroke:#5cd4bc,color:#fff
     style C fill:#1de9b6,stroke:#0db99a,color:#000
 ```
 

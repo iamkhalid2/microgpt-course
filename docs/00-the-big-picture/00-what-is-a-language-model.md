@@ -36,10 +36,10 @@ flowchart LR
     D --> E["5. Pick one"]
     E --> A
 
-    style A fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style B fill:#6a3de8,stroke:#4a2db8,color:#fff
-    style C fill:#5830d1,stroke:#3820a1,color:#fff
-    style D fill:#4623ba,stroke:#26138a,color:#fff
+    style A fill:#1de9b6,stroke:#0db99a,color:#fff
+    style B fill:#17c9a0,stroke:#4a2db8,color:#fff
+    style C fill:#12a889,stroke:#0a7d68,color:#fff
+    style D fill:#0d8872,stroke:#085c4e,color:#fff
     style E fill:#1de9b6,stroke:#0db99a,color:#000
 ```
 
@@ -56,10 +56,10 @@ flowchart TD
     E --> F["6. Repeat\nthousands of times"]
     F --> A
 
-    style A fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style B fill:#6a3de8,stroke:#4a2db8,color:#fff
-    style C fill:#e74c3c,stroke:#c0392b,color:#fff
-    style D fill:#e67e22,stroke:#d35400,color:#fff
+    style A fill:#1de9b6,stroke:#0db99a,color:#fff
+    style B fill:#17c9a0,stroke:#4a2db8,color:#fff
+    style C fill:#64ffda,stroke:#4dd4b0,color:#fff
+    style D fill:#80ffe5,stroke:#5cd4bc,color:#fff
     style E fill:#2ecc71,stroke:#27ae60,color:#fff
     style F fill:#1de9b6,stroke:#0db99a,color:#000
 ```

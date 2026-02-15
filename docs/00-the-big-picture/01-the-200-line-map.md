@@ -19,7 +19,7 @@ block-beta
     l6["Lines 146-184"] s6["TRAINING"] d6["Optimizer + training loop"]
     l7["Lines 186-200"] s7["INFERENCE"] d7["Generate new text"]
 
-    style h fill:#7c4dff,stroke:#5c3cbf,color:#fff
+    style h fill:#1de9b6,stroke:#0db99a,color:#fff
     style s1 fill:#1de9b6,stroke:#0db99a,color:#000
     style s2 fill:#1de9b6,stroke:#0db99a,color:#000
     style s3 fill:#1de9b6,stroke:#0db99a,color:#000
@@ -194,10 +194,10 @@ flowchart TD
     D --> E["🏋️ Training"]
     E --> F["✨ Inference"]
 
-    style A fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style B fill:#6a3de8,stroke:#4a2db8,color:#fff
-    style C fill:#5830d1,stroke:#3820a1,color:#fff
-    style D fill:#4623ba,stroke:#26138a,color:#fff
+    style A fill:#1de9b6,stroke:#0db99a,color:#fff
+    style B fill:#17c9a0,stroke:#4a2db8,color:#fff
+    style C fill:#12a889,stroke:#0a7d68,color:#fff
+    style D fill:#0d8872,stroke:#085c4e,color:#fff
     style E fill:#341099,stroke:#240a69,color:#fff
     style F fill:#1de9b6,stroke:#0db99a,color:#000
 ```

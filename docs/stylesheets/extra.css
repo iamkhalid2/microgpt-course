@@ -1,12 +1,12 @@
 /* ============================================================
    MicroGPT Course — Custom Styles
-   Premium dark-first design with deep purple / teal palette
+   Premium dark-first design with teal gradient palette
    ============================================================ */
 
 /* --- Root Variables --- */
 :root {
-  --md-primary-fg-color: #7c4dff;
-  --md-accent-fg-color: #1de9b6;
+  --md-primary-fg-color: #1de9b6;
+  --md-accent-fg-color: #64ffda;
 }
 
 [data-md-color-scheme="slate"] {
@@ -25,7 +25,7 @@
 .md-typeset h1 {
   font-weight: 800;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #7c4dff 0%, #1de9b6 100%);
+  background: linear-gradient(135deg, #1de9b6 0%, #64ffda 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -33,7 +33,7 @@
 
 .md-typeset h2 {
   font-weight: 700;
-  border-bottom: 2px solid rgba(124, 77, 255, 0.2);
+  border-bottom: 2px solid rgba(29, 233, 182, 0.25);
   padding-bottom: 0.4em;
   margin-top: 2em;
 }
@@ -57,8 +57,8 @@
 
 /* Code block titles */
 .md-typeset .highlight > .filename {
-  background: linear-gradient(135deg, rgba(124, 77, 255, 0.15), rgba(29, 233, 182, 0.1));
-  border-bottom: 1px solid rgba(124, 77, 255, 0.3);
+  background: linear-gradient(135deg, rgba(29, 233, 182, 0.15), rgba(100, 255, 218, 0.08));
+  border-bottom: 1px solid rgba(29, 233, 182, 0.3);
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -76,18 +76,18 @@
   font-weight: 600;
 }
 
-/* Custom "intuition" admonition — teal for mental models */
+/* Custom "intuition" admonition — lighter teal for mental models */
 .md-typeset .admonition.intuition,
 .md-typeset details.intuition {
-  border-color: #1de9b6;
+  border-color: #64ffda;
 }
 .md-typeset .intuition > .admonition-title,
 .md-typeset .intuition > summary {
-  background-color: rgba(29, 233, 182, 0.1);
+  background-color: rgba(100, 255, 218, 0.1);
 }
 .md-typeset .intuition > .admonition-title::before,
 .md-typeset .intuition > summary::before {
-  background-color: #1de9b6;
+  background-color: #64ffda;
   -webkit-mask-image: var(--md-admonition-icon--tip);
   mask-image: var(--md-admonition-icon--tip);
 }
@@ -111,7 +111,7 @@
 }
 
 .md-typeset table:not([class]) th {
-  background: linear-gradient(135deg, rgba(124, 77, 255, 0.15), rgba(29, 233, 182, 0.08));
+  background: linear-gradient(135deg, rgba(29, 233, 182, 0.15), rgba(100, 255, 218, 0.08));
   font-weight: 700;
   text-transform: uppercase;
   font-size: 0.75rem;
@@ -189,17 +189,17 @@ html {
 }
 
 .module-card {
-  border: 1px solid rgba(124, 77, 255, 0.2);
+  border: 1px solid rgba(29, 233, 182, 0.2);
   border-radius: 12px;
   padding: 1.5em;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  background: rgba(124, 77, 255, 0.03);
+  background: rgba(29, 233, 182, 0.03);
 }
 
 .module-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(124, 77, 255, 0.15);
-  border-color: rgba(124, 77, 255, 0.5);
+  box-shadow: 0 8px 24px rgba(29, 233, 182, 0.15);
+  border-color: rgba(29, 233, 182, 0.5);
 }
 
 .module-card h3 {
@@ -215,7 +215,7 @@ html {
 
 /* --- Terminology collapsible default closed --- */
 .md-typeset details.terminology {
-  border-color: rgba(124, 77, 255, 0.4);
+  border-color: rgba(29, 233, 182, 0.4);
 }
 
 /* --- Blockquote styling --- */

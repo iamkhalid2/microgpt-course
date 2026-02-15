@@ -119,10 +119,10 @@ flowchart TD
     RES2 --> LM["lm_head\n(16 → 27)"]
     LM --> OUT["logits\n(27 scores)"]
 
-    style TID fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style PID fill:#7c4dff,stroke:#5c3cbf,color:#fff
+    style TID fill:#1de9b6,stroke:#0db99a,color:#fff
+    style PID fill:#1de9b6,stroke:#0db99a,color:#fff
     style OUT fill:#1de9b6,stroke:#0db99a,color:#000
-    style layer fill:none,stroke:#e67e22,stroke-width:2px
+    style layer fill:none,stroke:#80ffe5,stroke-width:2px
 ```
 
 ## What the Logits Mean

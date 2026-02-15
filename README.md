@@ -1,6 +1,6 @@
 # MicroGPT: A First-Principles Course
 
-[![GitHub Pages](https://img.shields.io/badge/📖_Read_the_Course-iamkhalid2.github.io/microgpt--course-7c4dff)](https://iamkhalid2.github.io/microgpt-course/)
+[![GitHub Pages](https://img.shields.io/badge/📖_Read_the_Course-iamkhalid2.github.io/microgpt--course-1de9b6)](https://iamkhalid2.github.io/microgpt-course/)
 
 ## What Is This?
 

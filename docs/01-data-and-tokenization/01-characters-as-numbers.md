@@ -70,7 +70,7 @@ flowchart LR
     A["'e'"] -- "uchars.index('e')" --> B["4"]
     B -- "uchars[4]" --> A
 
-    style A fill:#7c4dff,stroke:#5c3cbf,color:#fff
+    style A fill:#1de9b6,stroke:#0db99a,color:#fff
     style B fill:#1de9b6,stroke:#0db99a,color:#000
 ```
 

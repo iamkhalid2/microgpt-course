@@ -44,12 +44,12 @@ For the name "emma":
 flowchart LR
     B1["BOS\n(26)"] --> E["e\n(4)"] --> M1["m\n(12)"] --> M2["m\n(12)"] --> A["a\n(0)"] --> B2["BOS\n(26)"]
 
-    style B1 fill:#e74c3c,stroke:#c0392b,color:#fff
-    style E fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style M1 fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style M2 fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style A fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style B2 fill:#e74c3c,stroke:#c0392b,color:#fff
+    style B1 fill:#64ffda,stroke:#4dd4b0,color:#fff
+    style E fill:#1de9b6,stroke:#0db99a,color:#fff
+    style M1 fill:#1de9b6,stroke:#0db99a,color:#fff
+    style M2 fill:#1de9b6,stroke:#0db99a,color:#fff
+    style A fill:#1de9b6,stroke:#0db99a,color:#fff
+    style B2 fill:#64ffda,stroke:#4dd4b0,color:#fff
 ```
 
 Now the training pairs become:

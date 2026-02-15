@@ -30,11 +30,11 @@ flowchart LR
     D --> E["📊 Probabilities"]
     E --> F["✨ Generated Text"]
 
-    style A fill:#7c4dff,stroke:#7c4dff,color:#fff
-    style B fill:#6a3de8,stroke:#6a3de8,color:#fff
-    style C fill:#5830d1,stroke:#5830d1,color:#fff
-    style D fill:#4623ba,stroke:#4623ba,color:#fff
-    style E fill:#2e1a8a,stroke:#2e1a8a,color:#fff
+    style A fill:#1de9b6,stroke:#1de9b6,color:#fff
+    style B fill:#17c9a0,stroke:#17c9a0,color:#fff
+    style C fill:#12a889,stroke:#12a889,color:#fff
+    style D fill:#0d8872,stroke:#0d8872,color:#fff
+    style E fill:#096b5b,stroke:#096b5b,color:#fff
     style F fill:#1de9b6,stroke:#1de9b6,color:#000
 ```
 

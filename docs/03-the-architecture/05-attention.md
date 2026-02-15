@@ -103,9 +103,9 @@ flowchart TD
     SM --> BLEND["Output = Σ αᵢ · Vᵢ"]
     CACHE --> BLEND
 
-    style X fill:#7c4dff,stroke:#5c3cbf,color:#fff
+    style X fill:#1de9b6,stroke:#0db99a,color:#fff
     style BLEND fill:#1de9b6,stroke:#0db99a,color:#000
-    style CACHE fill:#e67e22,stroke:#d35400,color:#fff
+    style CACHE fill:#80ffe5,stroke:#5cd4bc,color:#fff
 ```
 
 ??? note "Terminology"

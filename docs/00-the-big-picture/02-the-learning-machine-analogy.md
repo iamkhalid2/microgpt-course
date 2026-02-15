@@ -14,8 +14,8 @@ flowchart LR
     B -- "friend says:\naim lower & left" --> C["🎯 Adjusts aim"]
     C -- "shoots again" --> A
 
-    style A fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style B fill:#e74c3c,stroke:#c0392b,color:#fff
+    style A fill:#1de9b6,stroke:#0db99a,color:#fff
+    style B fill:#64ffda,stroke:#4dd4b0,color:#fff
     style C fill:#1de9b6,stroke:#0db99a,color:#000
 ```
 
@@ -126,11 +126,11 @@ flowchart TD
     M5["Module 5: How do we\ngenerate new text?"] --> DONE
     DONE["✅ You understand the entire file"]
 
-    style HERE fill:#e74c3c,stroke:#c0392b,color:#fff
-    style M1 fill:#7c4dff,stroke:#5c3cbf,color:#fff
-    style M2 fill:#6a3de8,stroke:#4a2db8,color:#fff
-    style M3 fill:#5830d1,stroke:#3820a1,color:#fff
-    style M4 fill:#4623ba,stroke:#26138a,color:#fff
+    style HERE fill:#64ffda,stroke:#4dd4b0,color:#fff
+    style M1 fill:#1de9b6,stroke:#0db99a,color:#fff
+    style M2 fill:#17c9a0,stroke:#4a2db8,color:#fff
+    style M3 fill:#12a889,stroke:#0a7d68,color:#fff
+    style M4 fill:#0d8872,stroke:#085c4e,color:#fff
     style M5 fill:#341099,stroke:#240a69,color:#fff
     style DONE fill:#1de9b6,stroke:#0db99a,color:#000
 ```

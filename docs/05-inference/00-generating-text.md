@@ -39,7 +39,7 @@ flowchart TD
     CHECK -->|"No"| APPEND["Append character"]
     APPEND --> GPT
 
-    style START fill:#7c4dff,stroke:#5c3cbf,color:#fff
+    style START fill:#1de9b6,stroke:#0db99a,color:#fff
     style DONE fill:#1de9b6,stroke:#0db99a,color:#000
 ```
 
