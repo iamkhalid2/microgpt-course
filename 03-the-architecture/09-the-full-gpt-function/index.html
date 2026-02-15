@@ -81,12 +81,7 @@
     end
 
     RES2 --&gt; LM["lm_head&lt;br&gt;(16 → 27)"]
-    LM --&gt; OUT["logits&lt;br&gt;(27 scores)"]
-
-    style TID fill:#e0faf4,stroke:#1de9b6
-    style PID fill:#e0faf4,stroke:#1de9b6
-    style OUT fill:#e0faf4,stroke:#1de9b6
-    style layer fill:none,stroke:#1de9b6,stroke-width:2px</code></pre> <h2 id=what-the-logits-mean>What the Logits Mean<a class=headerlink href=#what-the-logits-mean title="Permanent link">&para;</a></h2> <p>The output is 27 numbers — one for each token in the vocabulary:</p> <div class="language-text highlight"><pre><span></span><code><span id=__span-5-1><a id=__codelineno-5-1 name=__codelineno-5-1 href=#__codelineno-5-1></a>logits[0]  → raw score for &#39;a&#39;
+    LM --&gt; OUT["logits&lt;br&gt;(27 scores)"]</code></pre> <h2 id=what-the-logits-mean>What the Logits Mean<a class=headerlink href=#what-the-logits-mean title="Permanent link">&para;</a></h2> <p>The output is 27 numbers — one for each token in the vocabulary:</p> <div class="language-text highlight"><pre><span></span><code><span id=__span-5-1><a id=__codelineno-5-1 name=__codelineno-5-1 href=#__codelineno-5-1></a>logits[0]  → raw score for &#39;a&#39;
 </span><span id=__span-5-2><a id=__codelineno-5-2 name=__codelineno-5-2 href=#__codelineno-5-2></a>logits[1]  → raw score for &#39;b&#39;
 </span><span id=__span-5-3><a id=__codelineno-5-3 name=__codelineno-5-3 href=#__codelineno-5-3></a>...
 </span><span id=__span-5-4><a id=__codelineno-5-4 name=__codelineno-5-4 href=#__codelineno-5-4></a>logits[25] → raw score for &#39;z&#39;

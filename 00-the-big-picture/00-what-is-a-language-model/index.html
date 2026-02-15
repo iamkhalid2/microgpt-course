@@ -3,26 +3,13 @@
     B --&gt; C["3. Do math on&lt;br&gt;those numbers"]
     C --&gt; D["4. Get a probability&lt;br&gt;for every possible&lt;br&gt;next character"]
     D --&gt; E["5. Pick one"]
-    E --&gt; A
-
-    style A fill:#e0faf4,stroke:#1de9b6
-    style B fill:#e0faf4,stroke:#1de9b6
-    style C fill:#e0faf4,stroke:#1de9b6
-    style D fill:#e0faf4,stroke:#1de9b6
-    style E fill:#e0faf4,stroke:#1de9b6</code></pre> <p>But wait — how does the model know <em>which</em> math to do? The math involves multiplying inputs by <strong>parameters</strong> (thousands of numbers), and those parameters start out random.</p> <p>That's where <strong>training</strong> comes in:</p> <pre class=mermaid><code>flowchart TD
+    E --&gt; A</code></pre> <p>But wait — how does the model know <em>which</em> math to do? The math involves multiplying inputs by <strong>parameters</strong> (thousands of numbers), and those parameters start out random.</p> <p>That's where <strong>training</strong> comes in:</p> <pre class=mermaid><code>flowchart TD
     A["1. Show the model&lt;br&gt;some real text"] --&gt; B["2. Let it predict&lt;br&gt;the next character"]
     B --&gt; C["3. Measure how&lt;br&gt;WRONG it was"]
     C --&gt; D["4. Figure out which&lt;br&gt;parameters caused the error"]
     D --&gt; E["5. Nudge those&lt;br&gt;parameters slightly"]
     E --&gt; F["6. Repeat&lt;br&gt;thousands of times"]
-    F --&gt; A
-
-    style A fill:#e0faf4,stroke:#1de9b6
-    style B fill:#e0faf4,stroke:#1de9b6
-    style C fill:#e0faf4,stroke:#1de9b6
-    style D fill:#e0faf4,stroke:#1de9b6
-    style E fill:#e0faf4,stroke:#1de9b6
-    style F fill:#e0faf4,stroke:#1de9b6</code></pre> <p>After enough repetitions, the parameters settle into values that make the model good at predicting.</p> <h2 id=character-level-vs-word-level>Character-Level vs. Word-Level<a class=headerlink href=#character-level-vs-word-level title="Permanent link">&para;</a></h2> <p>ChatGPT predicts <strong>tokens</strong> (roughly word-pieces). But <code>microgpt.py</code> predicts <strong>individual characters</strong> — one letter at a time.</p> <div class="admonition info"> <p class=admonition-title>Why characters?</p> <p>Because it's simpler. There are only ~27 characters (a-z plus a few special ones) versus tens of thousands of words. The core algorithm is identical; character-level just makes everything smaller and easier to understand.</p> </div> <p>In our case, the dataset is a list of human names:</p> <div class="language-text highlight"><span class=filename>Training Data (sample)</span><pre><span></span><code><span id=__span-0-1><a id=__codelineno-0-1 name=__codelineno-0-1 href=#__codelineno-0-1></a>emma
+    F --&gt; A</code></pre> <p>After enough repetitions, the parameters settle into values that make the model good at predicting.</p> <h2 id=character-level-vs-word-level>Character-Level vs. Word-Level<a class=headerlink href=#character-level-vs-word-level title="Permanent link">&para;</a></h2> <p>ChatGPT predicts <strong>tokens</strong> (roughly word-pieces). But <code>microgpt.py</code> predicts <strong>individual characters</strong> — one letter at a time.</p> <div class="admonition info"> <p class=admonition-title>Why characters?</p> <p>Because it's simpler. There are only ~27 characters (a-z plus a few special ones) versus tens of thousands of words. The core algorithm is identical; character-level just makes everything smaller and easier to understand.</p> </div> <p>In our case, the dataset is a list of human names:</p> <div class="language-text highlight"><span class=filename>Training Data (sample)</span><pre><span></span><code><span id=__span-0-1><a id=__codelineno-0-1 name=__codelineno-0-1 href=#__codelineno-0-1></a>emma
 </span><span id=__span-0-2><a id=__codelineno-0-2 name=__codelineno-0-2 href=#__codelineno-0-2></a>olivia
 </span><span id=__span-0-3><a id=__codelineno-0-3 name=__codelineno-0-3 href=#__codelineno-0-3></a>ava
 </span><span id=__span-0-4><a id=__codelineno-0-4 name=__codelineno-0-4 href=#__codelineno-0-4></a>isabella

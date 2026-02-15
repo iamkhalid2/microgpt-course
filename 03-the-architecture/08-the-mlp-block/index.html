@@ -2,11 +2,7 @@
     X["x&lt;br&gt;(16 dims)"] --&gt; FC1["Linear&lt;br&gt;16 → 64&lt;br&gt;(expand)"]
     FC1 --&gt; ACT["ReLU²&lt;br&gt;(activate)"]
     ACT --&gt; FC2["Linear&lt;br&gt;64 → 16&lt;br&gt;(compress)"]
-    FC2 --&gt; OUT["output&lt;br&gt;(16 dims)"]
-
-    style X fill:#e0faf4,stroke:#1de9b6
-    style ACT fill:#e0faf4,stroke:#1de9b6
-    style OUT fill:#e0faf4,stroke:#1de9b6</code></pre> <h2 id=the-code-lines-135141>The Code (Lines 135–141)<a class=headerlink href=#the-code-lines-135141 title="Permanent link">&para;</a></h2> <div class="language-python highlight"><span class=filename>microgpt.py — Lines 135-141</span><pre><span></span><code><span id=__span-0-1><a id=__codelineno-0-1 name=__codelineno-0-1 href=#__codelineno-0-1></a><span class=c1># 2) MLP block</span>
+    FC2 --&gt; OUT["output&lt;br&gt;(16 dims)"]</code></pre> <h2 id=the-code-lines-135141>The Code (Lines 135–141)<a class=headerlink href=#the-code-lines-135141 title="Permanent link">&para;</a></h2> <div class="language-python highlight"><span class=filename>microgpt.py — Lines 135-141</span><pre><span></span><code><span id=__span-0-1><a id=__codelineno-0-1 name=__codelineno-0-1 href=#__codelineno-0-1></a><span class=c1># 2) MLP block</span>
 </span><span id=__span-0-2><a id=__codelineno-0-2 name=__codelineno-0-2 href=#__codelineno-0-2></a><span class=n>x_residual</span> <span class=o>=</span> <span class=n>x</span>                                      <span class=c1># save for residual</span>
 </span><span id=__span-0-3><a id=__codelineno-0-3 name=__codelineno-0-3 href=#__codelineno-0-3></a><span class=n>x</span> <span class=o>=</span> <span class=n>rmsnorm</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>                                      <span class=c1># normalize</span>
 </span><span id=__span-0-4><a id=__codelineno-0-4 name=__codelineno-0-4 href=#__codelineno-0-4></a><span class=n>x</span> <span class=o>=</span> <span class=n>linear</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>state_dict</span><span class=p>[</span><span class=sa>f</span><span class=s1>&#39;layer</span><span class=si>{</span><span class=n>li</span><span class=si>}</span><span class=s1>.mlp_fc1&#39;</span><span class=p>])</span>     <span class=c1># expand: 16 → 64</span>

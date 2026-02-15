@@ -14,11 +14,7 @@
     F --&gt; L["3. LOSS&lt;br&gt;measure&lt;br&gt;how wrong"]
     L --&gt; B["4. BACKWARD&lt;br&gt;compute&lt;br&gt;gradients"]
     B --&gt; U["5. UPDATE&lt;br&gt;nudge&lt;br&gt;parameters"]
-    U --&gt; |"repeat ×500"| S
-
-    style S fill:#e0faf4,stroke:#1de9b6
-    style L fill:#e0faf4,stroke:#1de9b6
-    style U fill:#e0faf4,stroke:#1de9b6</code></pre> <h2 id=the-training-loop-lines-153184-overview>The Training Loop (Lines 153–184, Overview)<a class=headerlink href=#the-training-loop-lines-153184-overview title="Permanent link">&para;</a></h2> <div class="language-python highlight"><span class=filename>microgpt.py — Lines 152-184 (simplified)</span><pre><span></span><code><span id=__span-2-1><a id=__codelineno-2-1 name=__codelineno-2-1 href=#__codelineno-2-1></a><span class=n>num_steps</span> <span class=o>=</span> <span class=mi>500</span>
+    U --&gt; |"repeat ×500"| S</code></pre> <h2 id=the-training-loop-lines-153184-overview>The Training Loop (Lines 153–184, Overview)<a class=headerlink href=#the-training-loop-lines-153184-overview title="Permanent link">&para;</a></h2> <div class="language-python highlight"><span class=filename>microgpt.py — Lines 152-184 (simplified)</span><pre><span></span><code><span id=__span-2-1><a id=__codelineno-2-1 name=__codelineno-2-1 href=#__codelineno-2-1></a><span class=n>num_steps</span> <span class=o>=</span> <span class=mi>500</span>
 </span><span id=__span-2-2><a id=__codelineno-2-2 name=__codelineno-2-2 href=#__codelineno-2-2></a><span class=k>for</span> <span class=n>step</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>num_steps</span><span class=p>):</span>
 </span><span id=__span-2-3><a id=__codelineno-2-3 name=__codelineno-2-3 href=#__codelineno-2-3></a>    <span class=c1># 1. Sample a document</span>
 </span><span id=__span-2-4><a id=__codelineno-2-4 name=__codelineno-2-4 href=#__codelineno-2-4></a>    <span class=n>doc</span> <span class=o>=</span> <span class=n>docs</span><span class=p>[</span><span class=n>step</span> <span class=o>%</span> <span class=nb>len</span><span class=p>(</span><span class=n>docs</span><span class=p>)]</span>
