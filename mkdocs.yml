@@ -1,8 +1,8 @@
 site_name: "MicroGPT: A First-Principles Course"
 site_description: "Reverse-engineer every line of a 200-line GPT from scratch. From 10th-grade math to building your first LLM."
 site_url: ""
-repo_url: https://github.com/mkhaledelhelaly/microgpt
-repo_name: mkhaledelhelaly/microgpt
+repo_url: https://github.com/iamkhalid2/microgpt-course
+repo_name: iamkhalid2/microgpt-course
 
 theme:
   name: material
@@ -91,7 +91,7 @@ extra_css:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/mkhaledelhelaly
+      link: https://github.com/iamkhalid2
 
 nav:
   - Home: index.md

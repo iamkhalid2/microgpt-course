@@ -14,7 +14,7 @@ From 10th-grade math to building your first LLM. No magic, no hand-waving.
 </p>
 
 [Start Learning :material-arrow-right:](00-the-big-picture/00-what-is-a-language-model.md){ .md-button .md-button--primary }
-[View the Code :material-github:](https://github.com/mkhaledelhelaly/microgpt){ .md-button }
+[View the Code :material-github:](https://github.com/iamkhalid2/microgpt-course){ .md-button }
 
 </div>
 
