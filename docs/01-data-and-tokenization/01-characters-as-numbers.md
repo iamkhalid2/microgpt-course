@@ -69,9 +69,6 @@ The **index** of each character in this list becomes its **token ID**:
 flowchart LR
     A["'e'"] -- "uchars.index('e')" --> B["4"]
     B -- "uchars[4]" --> A
-
-    style A fill:#e0faf4,stroke:#1de9b6
-    style B fill:#e0faf4,stroke:#1de9b6
 ```
 
 The name "emma" becomes:

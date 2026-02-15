@@ -44,10 +44,6 @@ flowchart LR
     L --> B["4. BACKWARD<br>compute<br>gradients"]
     B --> U["5. UPDATE<br>nudge<br>parameters"]
     U --> |"repeat ×500"| S
-
-    style S fill:#e0faf4,stroke:#1de9b6
-    style L fill:#e0faf4,stroke:#1de9b6
-    style U fill:#e0faf4,stroke:#1de9b6
 ```
 
 ## The Training Loop (Lines 153–184, Overview)

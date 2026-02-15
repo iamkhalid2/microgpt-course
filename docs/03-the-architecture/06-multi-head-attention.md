@@ -25,9 +25,6 @@ flowchart LR
     H2 --> CAT
     H3 --> CAT
     CAT --> WO["linear(Wo)<br>→ output (16 dims)"]
-
-    style Q fill:#e0faf4,stroke:#1de9b6
-    style WO fill:#e0faf4,stroke:#1de9b6
 ```
 
 Each head:

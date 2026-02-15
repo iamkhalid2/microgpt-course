@@ -102,10 +102,6 @@ flowchart TD
     SCORE --> SM["Softmax → weights α"]
     SM --> BLEND["Output = Σ αᵢ · Vᵢ"]
     CACHE --> BLEND
-
-    style X fill:#e0faf4,stroke:#1de9b6
-    style BLEND fill:#e0faf4,stroke:#1de9b6
-    style CACHE fill:#e0faf4,stroke:#1de9b6
 ```
 
 ??? note "Terminology"

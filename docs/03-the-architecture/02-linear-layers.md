@@ -74,10 +74,6 @@ It's a measure of "similarity" between two vectors. High dot product = vectors p
 flowchart LR
     X["x<br>[x₀, x₁, x₂]"] --> ROW0["row 0: [w₀₀, w₀₁, w₀₂]<br>→ dot product → y₀"]
     X --> ROW1["row 1: [w₁₀, w₁₁, w₁₂]<br>→ dot product → y₁"]
-
-    style X fill:#e0faf4,stroke:#1de9b6
-    style ROW0 fill:#e0faf4,stroke:#1de9b6
-    style ROW1 fill:#e0faf4,stroke:#1de9b6
 ```
 
 Each row of the weight matrix produces one output element. The number of rows determines the output size.

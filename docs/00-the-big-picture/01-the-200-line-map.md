@@ -18,15 +18,6 @@ block-beta
     l5["Lines 92-144"] s5["ARCHITECTURE"] d5["The GPT model function"]
     l6["Lines 146-184"] s6["TRAINING"] d6["Optimizer + training loop"]
     l7["Lines 186-200"] s7["INFERENCE"] d7["Generate new text"]
-
-    style h fill:#e0faf4,stroke:#1de9b6
-    style s1 fill:#e0faf4,stroke:#1de9b6
-    style s2 fill:#e0faf4,stroke:#1de9b6
-    style s3 fill:#e0faf4,stroke:#1de9b6
-    style s4 fill:#e0faf4,stroke:#1de9b6
-    style s5 fill:#e0faf4,stroke:#1de9b6
-    style s6 fill:#e0faf4,stroke:#1de9b6
-    style s7 fill:#e0faf4,stroke:#1de9b6
 ```
 
 Let's walk through each block.
@@ -193,13 +184,6 @@ flowchart TD
     C --> D["🧠 Architecture"]
     D --> E["🏋️ Training"]
     E --> F["✨ Inference"]
-
-    style A fill:#e0faf4,stroke:#1de9b6
-    style B fill:#e0faf4,stroke:#1de9b6
-    style C fill:#e0faf4,stroke:#1de9b6
-    style D fill:#e0faf4,stroke:#1de9b6
-    style E fill:#e0faf4,stroke:#1de9b6
-    style F fill:#e0faf4,stroke:#1de9b6
 ```
 
 You can't understand the architecture without understanding autograd.

@@ -13,10 +13,6 @@ flowchart LR
     A["🏹 Archer<br>(blindfolded)"] -- "shoots" --> B["❌ Miss!<br>(too high, too right)"]
     B -- "friend says:<br>aim lower & left" --> C["🎯 Adjusts aim"]
     C -- "shoots again" --> A
-
-    style A fill:#e0faf4,stroke:#1de9b6
-    style B fill:#e0faf4,stroke:#1de9b6
-    style C fill:#e0faf4,stroke:#1de9b6
 ```
 
 1. The archer shoots an arrow (makes a **prediction**)
@@ -125,12 +121,4 @@ flowchart TD
     M4["Module 4: How does the<br>training loop work?"] --> M5
     M5["Module 5: How do we<br>generate new text?"] --> DONE
     DONE["✅ You understand the entire file"]
-
-    style HERE fill:#e0faf4,stroke:#1de9b6
-    style M1 fill:#e0faf4,stroke:#1de9b6
-    style M2 fill:#e0faf4,stroke:#1de9b6
-    style M3 fill:#e0faf4,stroke:#1de9b6
-    style M4 fill:#e0faf4,stroke:#1de9b6
-    style M5 fill:#e0faf4,stroke:#1de9b6
-    style DONE fill:#e0faf4,stroke:#1de9b6
 ```

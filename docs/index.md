@@ -29,13 +29,6 @@ flowchart LR
     C --> D["🧠 Transformer"]
     D --> E["📊 Probabilities"]
     E --> F["✨ Generated Text"]
-
-    style A fill:#e0faf4,stroke:#1de9b6
-    style B fill:#e0faf4,stroke:#1de9b6
-    style C fill:#e0faf4,stroke:#1de9b6
-    style D fill:#e0faf4,stroke:#1de9b6
-    style E fill:#e0faf4,stroke:#1de9b6
-    style F fill:#e0faf4,stroke:#1de9b6
 ```
 
 ---

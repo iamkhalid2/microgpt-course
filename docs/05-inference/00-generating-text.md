@@ -38,9 +38,6 @@ flowchart TD
     CHECK -->|"Yes"| DONE["Print the name"]
     CHECK -->|"No"| APPEND["Append character"]
     APPEND --> GPT
-
-    style START fill:#e0faf4,stroke:#1de9b6
-    style DONE fill:#e0faf4,stroke:#1de9b6
 ```
 
 === "Step 0"

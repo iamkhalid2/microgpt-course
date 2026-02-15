@@ -35,12 +35,6 @@ flowchart LR
     C --> D["4. Get a probability<br>for every possible<br>next character"]
     D --> E["5. Pick one"]
     E --> A
-
-    style A fill:#e0faf4,stroke:#1de9b6
-    style B fill:#e0faf4,stroke:#1de9b6
-    style C fill:#e0faf4,stroke:#1de9b6
-    style D fill:#e0faf4,stroke:#1de9b6
-    style E fill:#e0faf4,stroke:#1de9b6
 ```
 
 But wait — how does the model know *which* math to do? The math involves multiplying inputs by **parameters** (thousands of numbers), and those parameters start out random.
@@ -55,13 +49,6 @@ flowchart TD
     D --> E["5. Nudge those<br>parameters slightly"]
     E --> F["6. Repeat<br>thousands of times"]
     F --> A
-
-    style A fill:#e0faf4,stroke:#1de9b6
-    style B fill:#e0faf4,stroke:#1de9b6
-    style C fill:#e0faf4,stroke:#1de9b6
-    style D fill:#e0faf4,stroke:#1de9b6
-    style E fill:#e0faf4,stroke:#1de9b6
-    style F fill:#e0faf4,stroke:#1de9b6
 ```
 
 After enough repetitions, the parameters settle into values that make the model good at predicting.

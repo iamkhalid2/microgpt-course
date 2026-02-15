@@ -69,10 +69,6 @@ flowchart TD
     TRAIN --> TRAINED["Trained Parameters"]
     TRAINED --> INF["Inference Loop"]
     INF --> NAMES["Generated Names"]
-
-    style DATA fill:#e0faf4,stroke:#1de9b6
-    style TRAINED fill:#e0faf4,stroke:#1de9b6
-    style NAMES fill:#e0faf4,stroke:#1de9b6
 ```
 
 ## microgpt.py vs. ChatGPT

@@ -97,10 +97,6 @@ Imagine you're on a hilly landscape in fog (you can't see the valley). The loss 
 flowchart LR
     A["🏔️ High Loss<br>(positive slope)"] -- "step opposite<br>to slope" --> B["📍 You are here"]
     B -- "step opposite<br>to slope" --> C["🏞️ Low Loss<br>(the valley)"]
-
-    style A fill:#e0faf4,stroke:#1de9b6
-    style B fill:#e0faf4,stroke:#1de9b6
-    style C fill:#e0faf4,stroke:#1de9b6
 ```
 
 - Positive slope → you're going uphill → step in the negative direction

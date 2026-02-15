@@ -68,10 +68,6 @@ flowchart TD
     BLOCK --> ADD["⊕ add"]
     SAVE -- "skip connection" --> ADD
     ADD --> OUT["new x<br>(original + new info)"]
-
-    style X fill:#e0faf4,stroke:#1de9b6
-    style ADD fill:#e0faf4,stroke:#1de9b6
-    style OUT fill:#e0faf4,stroke:#1de9b6
 ```
 
 ??? note "Terminology"

@@ -16,10 +16,6 @@ flowchart LR
     FC1 --> ACT["ReLU²<br>(activate)"]
     ACT --> FC2["Linear<br>64 → 16<br>(compress)"]
     FC2 --> OUT["output<br>(16 dims)"]
-
-    style X fill:#e0faf4,stroke:#1de9b6
-    style ACT fill:#e0faf4,stroke:#1de9b6
-    style OUT fill:#e0faf4,stroke:#1de9b6
 ```
 
 ## The Code (Lines 135–141)

@@ -39,13 +39,6 @@ f = e.relu()     # 4.0 (positive, so unchanged)
         MUL --> ADD["+ → e (4.0)"]
         D["d (10.0)"] --> ADD
         ADD --> RELU["relu → f (4.0)"]
-
-        style A fill:#e0faf4,stroke:#1de9b6
-        style B fill:#e0faf4,stroke:#1de9b6
-        style D fill:#e0faf4,stroke:#1de9b6
-        style MUL fill:#e0faf4,stroke:#1de9b6
-        style ADD fill:#e0faf4,stroke:#1de9b6
-        style RELU fill:#e0faf4,stroke:#1de9b6
     ```
 
 Each arrow is a `Value` node. Each operation creates a new node.
@@ -123,9 +116,6 @@ flowchart LR
     MUL --> ADD
     D --> ADD
     ADD --> RELU
-
-    style inputs fill:none,stroke:#1de9b6
-    style ops fill:none,stroke:#1de9b6
 ```
 
 **FORWARD** = left to right (compute values) ➡️

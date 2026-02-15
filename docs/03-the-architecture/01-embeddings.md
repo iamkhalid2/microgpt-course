@@ -71,10 +71,6 @@ flowchart LR
     TOK --> ADD["⊕ element-wise add"]
     POS --> ADD
     ADD --> X["x = 'e' at position 2<br>(16 Values)"]
-
-    style TID fill:#e0faf4,stroke:#1de9b6
-    style PID fill:#e0faf4,stroke:#1de9b6
-    style X fill:#e0faf4,stroke:#1de9b6
 ```
 
 ## Why 16 Dimensions?

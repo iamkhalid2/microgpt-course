@@ -43,13 +43,6 @@ For the name "emma":
 ```mermaid
 flowchart LR
     B1["BOS<br>(26)"] --> E["e<br>(4)"] --> M1["m<br>(12)"] --> M2["m<br>(12)"] --> A["a<br>(0)"] --> B2["BOS<br>(26)"]
-
-    style B1 fill:#e0faf4,stroke:#1de9b6
-    style E fill:#e0faf4,stroke:#1de9b6
-    style M1 fill:#e0faf4,stroke:#1de9b6
-    style M2 fill:#e0faf4,stroke:#1de9b6
-    style A fill:#e0faf4,stroke:#1de9b6
-    style B2 fill:#e0faf4,stroke:#1de9b6
 ```
 
 Now the training pairs become:
