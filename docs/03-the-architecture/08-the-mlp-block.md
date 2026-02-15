@@ -12,14 +12,14 @@ The MLP is a two-layer network sandwiched around a non-linear activation:
 
 ```mermaid
 flowchart LR
-    X["x\n(16 dims)"] --> FC1["Linear\n16 → 64\n(expand)"]
-    FC1 --> ACT["ReLU²\n(activate)"]
-    ACT --> FC2["Linear\n64 → 16\n(compress)"]
-    FC2 --> OUT["output\n(16 dims)"]
+    X["x<br>(16 dims)"] --> FC1["Linear<br>16 → 64<br>(expand)"]
+    FC1 --> ACT["ReLU²<br>(activate)"]
+    ACT --> FC2["Linear<br>64 → 16<br>(compress)"]
+    FC2 --> OUT["output<br>(16 dims)"]
 
-    style X fill:#1de9b6,stroke:#0db99a,color:#fff
-    style ACT fill:#64ffda,stroke:#4dd4b0,color:#fff
-    style OUT fill:#1de9b6,stroke:#0db99a,color:#000
+    style X fill:#e0faf4,stroke:#1de9b6
+    style ACT fill:#e0faf4,stroke:#1de9b6
+    style OUT fill:#e0faf4,stroke:#1de9b6
 ```
 
 ## The Code (Lines 135–141)

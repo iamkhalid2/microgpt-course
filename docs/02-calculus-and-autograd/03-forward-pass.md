@@ -40,12 +40,12 @@ f = e.relu()     # 4.0 (positive, so unchanged)
         D["d (10.0)"] --> ADD
         ADD --> RELU["relu → f (4.0)"]
 
-        style A fill:#1de9b6,stroke:#0db99a,color:#fff
-        style B fill:#1de9b6,stroke:#0db99a,color:#fff
-        style D fill:#1de9b6,stroke:#0db99a,color:#fff
-        style MUL fill:#12a889,stroke:#0a7d68,color:#fff
-        style ADD fill:#0d8872,stroke:#085c4e,color:#fff
-        style RELU fill:#1de9b6,stroke:#0db99a,color:#000
+        style A fill:#e0faf4,stroke:#1de9b6
+        style B fill:#e0faf4,stroke:#1de9b6
+        style D fill:#e0faf4,stroke:#1de9b6
+        style MUL fill:#e0faf4,stroke:#1de9b6
+        style ADD fill:#e0faf4,stroke:#1de9b6
+        style RELU fill:#e0faf4,stroke:#1de9b6
     ```
 
 Each arrow is a `Value` node. Each operation creates a new node.

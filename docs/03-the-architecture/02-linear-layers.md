@@ -72,12 +72,12 @@ It's a measure of "similarity" between two vectors. High dot product = vectors p
 
 ```mermaid
 flowchart LR
-    X["x\n[x₀, x₁, x₂]"] --> ROW0["row 0: [w₀₀, w₀₁, w₀₂]\n→ dot product → y₀"]
-    X --> ROW1["row 1: [w₁₀, w₁₁, w₁₂]\n→ dot product → y₁"]
+    X["x<br>[x₀, x₁, x₂]"] --> ROW0["row 0: [w₀₀, w₀₁, w₀₂]<br>→ dot product → y₀"]
+    X --> ROW1["row 1: [w₁₀, w₁₁, w₁₂]<br>→ dot product → y₁"]
 
-    style X fill:#1de9b6,stroke:#0db99a,color:#fff
-    style ROW0 fill:#1de9b6,stroke:#0db99a,color:#000
-    style ROW1 fill:#1de9b6,stroke:#0db99a,color:#000
+    style X fill:#e0faf4,stroke:#1de9b6
+    style ROW0 fill:#e0faf4,stroke:#1de9b6
+    style ROW1 fill:#e0faf4,stroke:#1de9b6
 ```
 
 Each row of the weight matrix produces one output element. The number of rows determines the output size.

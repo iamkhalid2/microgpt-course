@@ -64,14 +64,14 @@ Each element: $\text{output}_i = \text{transformed}_i + \text{original}_i$.
 flowchart TD
     X["x (16 dims)"] --> SAVE["save as x_residual"]
     SAVE --> NORM["RMSNorm"]
-    NORM --> BLOCK["Attention or MLP\n(transformation)"]
+    NORM --> BLOCK["Attention or MLP<br>(transformation)"]
     BLOCK --> ADD["⊕ add"]
     SAVE -- "skip connection" --> ADD
-    ADD --> OUT["new x\n(original + new info)"]
+    ADD --> OUT["new x<br>(original + new info)"]
 
-    style X fill:#1de9b6,stroke:#0db99a,color:#fff
-    style ADD fill:#80ffe5,stroke:#5cd4bc,color:#fff
-    style OUT fill:#1de9b6,stroke:#0db99a,color:#000
+    style X fill:#e0faf4,stroke:#1de9b6
+    style ADD fill:#e0faf4,stroke:#1de9b6
+    style OUT fill:#e0faf4,stroke:#1de9b6
 ```
 
 ??? note "Terminology"

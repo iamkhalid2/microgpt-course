@@ -43,11 +43,11 @@ flowchart LR
     T["target (3.0)"] --> SUB
     SUB --> POW["² → loss (3.61)"]
 
-    style W fill:#1de9b6,stroke:#0db99a,color:#fff
-    style B fill:#1de9b6,stroke:#0db99a,color:#fff
-    style X fill:#12a889,stroke:#0a7d68,color:#fff
-    style T fill:#12a889,stroke:#0a7d68,color:#fff
-    style POW fill:#64ffda,stroke:#4dd4b0,color:#fff
+    style W fill:#e0faf4,stroke:#1de9b6
+    style B fill:#e0faf4,stroke:#1de9b6
+    style X fill:#e0faf4,stroke:#1de9b6
+    style T fill:#e0faf4,stroke:#1de9b6
+    style POW fill:#e0faf4,stroke:#1de9b6
 ```
 
 ### Now backward:

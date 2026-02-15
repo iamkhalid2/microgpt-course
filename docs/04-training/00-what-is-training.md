@@ -39,15 +39,15 @@ Each training step follows this exact recipe:
 
 ```mermaid
 flowchart LR
-    S["1. SAMPLE\na name"] --> F["2. FORWARD\npredict each\nnext character"]
-    F --> L["3. LOSS\nmeasure\nhow wrong"]
-    L --> B["4. BACKWARD\ncompute\ngradients"]
-    B --> U["5. UPDATE\nnudge\nparameters"]
+    S["1. SAMPLE<br>a name"] --> F["2. FORWARD<br>predict each<br>next character"]
+    F --> L["3. LOSS<br>measure<br>how wrong"]
+    L --> B["4. BACKWARD<br>compute<br>gradients"]
+    B --> U["5. UPDATE<br>nudge<br>parameters"]
     U --> |"repeat ×500"| S
 
-    style S fill:#1de9b6,stroke:#0db99a,color:#fff
-    style L fill:#64ffda,stroke:#4dd4b0,color:#fff
-    style U fill:#1de9b6,stroke:#0db99a,color:#000
+    style S fill:#e0faf4,stroke:#1de9b6
+    style L fill:#e0faf4,stroke:#1de9b6
+    style U fill:#e0faf4,stroke:#1de9b6
 ```
 
 ## The Training Loop (Lines 153–184, Overview)

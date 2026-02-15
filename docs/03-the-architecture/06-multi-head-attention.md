@@ -16,18 +16,18 @@ Split the 16-dimensional Q, K, V vectors into **4 independent groups of 4 dimens
 
 ```mermaid
 flowchart LR
-    Q["Q (16 dims)"] --> H0["Head 0\ndims 0-3"]
-    Q --> H1["Head 1\ndims 4-7"]
-    Q --> H2["Head 2\ndims 8-11"]
-    Q --> H3["Head 3\ndims 12-15"]
-    H0 --> CAT["Concatenate\n(16 dims)"]
+    Q["Q (16 dims)"] --> H0["Head 0<br>dims 0-3"]
+    Q --> H1["Head 1<br>dims 4-7"]
+    Q --> H2["Head 2<br>dims 8-11"]
+    Q --> H3["Head 3<br>dims 12-15"]
+    H0 --> CAT["Concatenate<br>(16 dims)"]
     H1 --> CAT
     H2 --> CAT
     H3 --> CAT
-    CAT --> WO["linear(Wo)\n→ output (16 dims)"]
+    CAT --> WO["linear(Wo)<br>→ output (16 dims)"]
 
-    style Q fill:#1de9b6,stroke:#0db99a,color:#fff
-    style WO fill:#1de9b6,stroke:#0db99a,color:#000
+    style Q fill:#e0faf4,stroke:#1de9b6
+    style WO fill:#e0faf4,stroke:#1de9b6
 ```
 
 Each head:

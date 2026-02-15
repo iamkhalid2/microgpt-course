@@ -106,23 +106,23 @@ flowchart TD
     subgraph layer["Layer 0"]
         NORM0 --> SAVE1["save x_residual"]
         SAVE1 --> NORM1["RMSNorm"]
-        NORM1 --> ATTN["Multi-Head Attention\n(4 heads)"]
+        NORM1 --> ATTN["Multi-Head Attention<br>(4 heads)"]
         ATTN --> RES1["⊕ residual"]
         SAVE1 -. "skip" .-> RES1
         RES1 --> SAVE2["save x_residual"]
         SAVE2 --> NORM2["RMSNorm"]
-        NORM2 --> MLP["MLP\n(16→64→16)"]
+        NORM2 --> MLP["MLP<br>(16→64→16)"]
         MLP --> RES2["⊕ residual"]
         SAVE2 -. "skip" .-> RES2
     end
 
-    RES2 --> LM["lm_head\n(16 → 27)"]
-    LM --> OUT["logits\n(27 scores)"]
+    RES2 --> LM["lm_head<br>(16 → 27)"]
+    LM --> OUT["logits<br>(27 scores)"]
 
-    style TID fill:#1de9b6,stroke:#0db99a,color:#fff
-    style PID fill:#1de9b6,stroke:#0db99a,color:#fff
-    style OUT fill:#1de9b6,stroke:#0db99a,color:#000
-    style layer fill:none,stroke:#80ffe5,stroke-width:2px
+    style TID fill:#e0faf4,stroke:#1de9b6
+    style PID fill:#e0faf4,stroke:#1de9b6
+    style OUT fill:#e0faf4,stroke:#1de9b6
+    style layer fill:none,stroke:#1de9b6,stroke-width:2px
 ```
 
 ## What the Logits Mean

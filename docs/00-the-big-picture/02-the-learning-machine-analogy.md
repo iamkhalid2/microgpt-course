@@ -10,13 +10,13 @@ Imagine a blindfolded archer trying to hit a target:
 
 ```mermaid
 flowchart LR
-    A["🏹 Archer\n(blindfolded)"] -- "shoots" --> B["❌ Miss!\n(too high, too right)"]
-    B -- "friend says:\naim lower & left" --> C["🎯 Adjusts aim"]
+    A["🏹 Archer<br>(blindfolded)"] -- "shoots" --> B["❌ Miss!<br>(too high, too right)"]
+    B -- "friend says:<br>aim lower & left" --> C["🎯 Adjusts aim"]
     C -- "shoots again" --> A
 
-    style A fill:#1de9b6,stroke:#0db99a,color:#fff
-    style B fill:#64ffda,stroke:#4dd4b0,color:#fff
-    style C fill:#1de9b6,stroke:#0db99a,color:#000
+    style A fill:#e0faf4,stroke:#1de9b6
+    style B fill:#e0faf4,stroke:#1de9b6
+    style C fill:#e0faf4,stroke:#1de9b6
 ```
 
 1. The archer shoots an arrow (makes a **prediction**)
@@ -119,18 +119,18 @@ But the *logic* — embed, attend, predict, measure error, compute gradients, up
 ```mermaid
 flowchart TD
     HERE["📍 You are here"] --> M1
-    M1["Module 1: How do we get data\nand turn it into numbers?"] --> M2
-    M2["Module 2: How do we automatically\nfind 'which way to nudge'?"] --> M3
-    M3["Module 3: What math does the model\nactually do on the numbers?"] --> M4
-    M4["Module 4: How does the\ntraining loop work?"] --> M5
-    M5["Module 5: How do we\ngenerate new text?"] --> DONE
+    M1["Module 1: How do we get data<br>and turn it into numbers?"] --> M2
+    M2["Module 2: How do we automatically<br>find 'which way to nudge'?"] --> M3
+    M3["Module 3: What math does the model<br>actually do on the numbers?"] --> M4
+    M4["Module 4: How does the<br>training loop work?"] --> M5
+    M5["Module 5: How do we<br>generate new text?"] --> DONE
     DONE["✅ You understand the entire file"]
 
-    style HERE fill:#64ffda,stroke:#4dd4b0,color:#fff
-    style M1 fill:#1de9b6,stroke:#0db99a,color:#fff
-    style M2 fill:#17c9a0,stroke:#4a2db8,color:#fff
-    style M3 fill:#12a889,stroke:#0a7d68,color:#fff
-    style M4 fill:#0d8872,stroke:#085c4e,color:#fff
-    style M5 fill:#341099,stroke:#240a69,color:#fff
-    style DONE fill:#1de9b6,stroke:#0db99a,color:#000
+    style HERE fill:#e0faf4,stroke:#1de9b6
+    style M1 fill:#e0faf4,stroke:#1de9b6
+    style M2 fill:#e0faf4,stroke:#1de9b6
+    style M3 fill:#e0faf4,stroke:#1de9b6
+    style M4 fill:#e0faf4,stroke:#1de9b6
+    style M5 fill:#e0faf4,stroke:#1de9b6
+    style DONE fill:#e0faf4,stroke:#1de9b6
 ```

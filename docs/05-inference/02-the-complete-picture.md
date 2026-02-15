@@ -60,19 +60,19 @@ If you've read through every lesson in order, you now understand **every single 
 
 ```mermaid
 flowchart TD
-    DATA["Data\n(names.txt)"] --> TOK["Tokenizer\n(chars → IDs)"]
-    TOK --> AG["Autograd Engine\n(Value class)"]
-    AG --> PARAMS["Parameters\n(4,064 Values)"]
-    AG --> ARCH["Architecture\n(gpt function)"]
+    DATA["Data<br>(names.txt)"] --> TOK["Tokenizer<br>(chars → IDs)"]
+    TOK --> AG["Autograd Engine<br>(Value class)"]
+    AG --> PARAMS["Parameters<br>(4,064 Values)"]
+    AG --> ARCH["Architecture<br>(gpt function)"]
     PARAMS --> TRAIN["Training Loop"]
     ARCH --> TRAIN
     TRAIN --> TRAINED["Trained Parameters"]
     TRAINED --> INF["Inference Loop"]
     INF --> NAMES["Generated Names"]
 
-    style DATA fill:#1de9b6,stroke:#0db99a,color:#fff
-    style TRAINED fill:#80ffe5,stroke:#5cd4bc,color:#fff
-    style NAMES fill:#1de9b6,stroke:#0db99a,color:#000
+    style DATA fill:#e0faf4,stroke:#1de9b6
+    style TRAINED fill:#e0faf4,stroke:#1de9b6
+    style NAMES fill:#e0faf4,stroke:#1de9b6
 ```
 
 ## microgpt.py vs. ChatGPT

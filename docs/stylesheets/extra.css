@@ -127,6 +127,15 @@
 /* --- Mermaid --- */
 .mermaid {
   margin: 1.5em 0;
+  overflow-x: auto;
+  font-size: 0.95rem;
+}
+
+/* Prevent Mermaid from shrinking too small on mobile */
+.mermaid svg {
+  min-width: 500px;
+  max-width: 100%;
+  height: auto;
 }
 
 /* --- Navigation --- */

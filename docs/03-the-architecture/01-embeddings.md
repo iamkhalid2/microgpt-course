@@ -64,17 +64,17 @@ x = [t + p for t, p in zip(tok_emb, pos_emb)]  # combined embedding
 
 ```mermaid
 flowchart LR
-    TID["token_id = 4\n('e')"] --> WTE["wte\n27 × 16"]
-    WTE --> |"row 4"| TOK["tok_emb\n(16 Values)"]
-    PID["pos_id = 2"] --> WPE["wpe\n8 × 16"]
-    WPE --> |"row 2"| POS["pos_emb\n(16 Values)"]
+    TID["token_id = 4<br>('e')"] --> WTE["wte<br>27 × 16"]
+    WTE --> |"row 4"| TOK["tok_emb<br>(16 Values)"]
+    PID["pos_id = 2"] --> WPE["wpe<br>8 × 16"]
+    WPE --> |"row 2"| POS["pos_emb<br>(16 Values)"]
     TOK --> ADD["⊕ element-wise add"]
     POS --> ADD
-    ADD --> X["x = 'e' at position 2\n(16 Values)"]
+    ADD --> X["x = 'e' at position 2<br>(16 Values)"]
 
-    style TID fill:#1de9b6,stroke:#0db99a,color:#fff
-    style PID fill:#1de9b6,stroke:#0db99a,color:#fff
-    style X fill:#1de9b6,stroke:#0db99a,color:#000
+    style TID fill:#e0faf4,stroke:#1de9b6
+    style PID fill:#e0faf4,stroke:#1de9b6
+    style X fill:#e0faf4,stroke:#1de9b6
 ```
 
 ## Why 16 Dimensions?

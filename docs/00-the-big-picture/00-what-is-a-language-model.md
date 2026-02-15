@@ -30,17 +30,17 @@ Every language model — from the simplest to ChatGPT — does exactly this:
 
 ```mermaid
 flowchart LR
-    A["1. Take some text\nas input"] --> B["2. Convert it\nto numbers"]
-    B --> C["3. Do math on\nthose numbers"]
-    C --> D["4. Get a probability\nfor every possible\nnext character"]
+    A["1. Take some text<br>as input"] --> B["2. Convert it<br>to numbers"]
+    B --> C["3. Do math on<br>those numbers"]
+    C --> D["4. Get a probability<br>for every possible<br>next character"]
     D --> E["5. Pick one"]
     E --> A
 
-    style A fill:#1de9b6,stroke:#0db99a,color:#fff
-    style B fill:#17c9a0,stroke:#4a2db8,color:#fff
-    style C fill:#12a889,stroke:#0a7d68,color:#fff
-    style D fill:#0d8872,stroke:#085c4e,color:#fff
-    style E fill:#1de9b6,stroke:#0db99a,color:#000
+    style A fill:#e0faf4,stroke:#1de9b6
+    style B fill:#e0faf4,stroke:#1de9b6
+    style C fill:#e0faf4,stroke:#1de9b6
+    style D fill:#e0faf4,stroke:#1de9b6
+    style E fill:#e0faf4,stroke:#1de9b6
 ```
 
 But wait — how does the model know *which* math to do? The math involves multiplying inputs by **parameters** (thousands of numbers), and those parameters start out random.
@@ -49,19 +49,19 @@ That's where **training** comes in:
 
 ```mermaid
 flowchart TD
-    A["1. Show the model\nsome real text"] --> B["2. Let it predict\nthe next character"]
-    B --> C["3. Measure how\nWRONG it was"]
-    C --> D["4. Figure out which\nparameters caused the error"]
-    D --> E["5. Nudge those\nparameters slightly"]
-    E --> F["6. Repeat\nthousands of times"]
+    A["1. Show the model<br>some real text"] --> B["2. Let it predict<br>the next character"]
+    B --> C["3. Measure how<br>WRONG it was"]
+    C --> D["4. Figure out which<br>parameters caused the error"]
+    D --> E["5. Nudge those<br>parameters slightly"]
+    E --> F["6. Repeat<br>thousands of times"]
     F --> A
 
-    style A fill:#1de9b6,stroke:#0db99a,color:#fff
-    style B fill:#17c9a0,stroke:#4a2db8,color:#fff
-    style C fill:#64ffda,stroke:#4dd4b0,color:#fff
-    style D fill:#80ffe5,stroke:#5cd4bc,color:#fff
-    style E fill:#2ecc71,stroke:#27ae60,color:#fff
-    style F fill:#1de9b6,stroke:#0db99a,color:#000
+    style A fill:#e0faf4,stroke:#1de9b6
+    style B fill:#e0faf4,stroke:#1de9b6
+    style C fill:#e0faf4,stroke:#1de9b6
+    style D fill:#e0faf4,stroke:#1de9b6
+    style E fill:#e0faf4,stroke:#1de9b6
+    style F fill:#e0faf4,stroke:#1de9b6
 ```
 
 After enough repetitions, the parameters settle into values that make the model good at predicting.

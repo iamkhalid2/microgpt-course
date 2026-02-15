@@ -67,9 +67,9 @@ Changing $a$ by 1 changes $c$ by 1. Same for $b$.
         A["a (2.0)"] -- "grad = 1" --> C["c (5.0)"]
         B["b (3.0)"] -- "grad = 1" --> C
 
-        style C fill:#1de9b6,stroke:#0db99a,color:#000
-        style A fill:#1de9b6,stroke:#0db99a,color:#fff
-        style B fill:#1de9b6,stroke:#0db99a,color:#fff
+        style C fill:#e0faf4,stroke:#1de9b6
+        style A fill:#e0faf4,stroke:#1de9b6
+        style B fill:#e0faf4,stroke:#1de9b6
     ```
 
 ## Multiplication (Lines 43–45)
@@ -99,9 +99,9 @@ So the local gradients are `(other.data, self.data)` — each child's gradient i
         A["a (2.0)"] -- "grad = 3.0 ← b's value!" --> C["c (6.0)"]
         B["b (3.0)"] -- "grad = 2.0 ← a's value!" --> C
 
-        style C fill:#1de9b6,stroke:#0db99a,color:#000
-        style A fill:#1de9b6,stroke:#0db99a,color:#fff
-        style B fill:#1de9b6,stroke:#0db99a,color:#fff
+        style C fill:#e0faf4,stroke:#1de9b6
+        style A fill:#e0faf4,stroke:#1de9b6
+        style B fill:#e0faf4,stroke:#1de9b6
     ```
 
     **Why swapped?** If you're multiplying $2 \times 3$ and increase the 2 to 3, you get $3 \times 3 = 9$. The result changed by 3 (which is the *other* number).
@@ -208,11 +208,11 @@ flowchart TD
     A --> D
     D --> E["e = ln(d) (2.302)"]
 
-    style A fill:#1de9b6,stroke:#0db99a,color:#fff
-    style B fill:#1de9b6,stroke:#0db99a,color:#fff
-    style C fill:#12a889,stroke:#0a7d68,color:#fff
-    style D fill:#0d8872,stroke:#085c4e,color:#fff
-    style E fill:#1de9b6,stroke:#0db99a,color:#000
+    style A fill:#e0faf4,stroke:#1de9b6
+    style B fill:#e0faf4,stroke:#1de9b6
+    style C fill:#e0faf4,stroke:#1de9b6
+    style D fill:#e0faf4,stroke:#1de9b6
+    style E fill:#e0faf4,stroke:#1de9b6
 ```
 
 The graph records the entire computation. Now we need to walk it backwards to compute gradients.

@@ -95,7 +95,7 @@ flowchart TD
     X["x (current token)"] --> Q["Q = linear(x, Wq)"]
     X --> K["K = linear(x, Wk)"]
     X --> V["V = linear(x, Wv)"]
-    K --> CACHE["KV Cache\n(all past K,V)"]
+    K --> CACHE["KV Cache<br>(all past K,V)"]
     V --> CACHE
     Q --> SCORE["Score = Q · Kᵢ / √d"]
     CACHE --> SCORE
@@ -103,9 +103,9 @@ flowchart TD
     SM --> BLEND["Output = Σ αᵢ · Vᵢ"]
     CACHE --> BLEND
 
-    style X fill:#1de9b6,stroke:#0db99a,color:#fff
-    style BLEND fill:#1de9b6,stroke:#0db99a,color:#000
-    style CACHE fill:#80ffe5,stroke:#5cd4bc,color:#fff
+    style X fill:#e0faf4,stroke:#1de9b6
+    style BLEND fill:#e0faf4,stroke:#1de9b6
+    style CACHE fill:#e0faf4,stroke:#1de9b6
 ```
 
 ??? note "Terminology"

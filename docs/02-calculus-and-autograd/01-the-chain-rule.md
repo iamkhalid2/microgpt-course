@@ -8,8 +8,8 @@ We know derivatives tell us "which way to nudge." But in a neural network, the l
 flowchart LR
     A["parameter"] --> B["embedding"] --> C["linear"] --> D["relu"] --> E["linear"] --> F["softmax"] --> G["log"] --> H["loss"]
 
-    style A fill:#1de9b6,stroke:#0db99a,color:#fff
-    style H fill:#64ffda,stroke:#4dd4b0,color:#fff
+    style A fill:#e0faf4,stroke:#1de9b6
+    style H fill:#e0faf4,stroke:#1de9b6
 ```
 
 How do we find the derivative of `loss` with respect to `parameter` when there are 6 operations between them?
@@ -69,9 +69,9 @@ Think of it like a pipeline. Each stage multiplies the "sensitivity":
 flowchart LR
     X["x"] -- "×2" --> G["g"] -- "×2g" --> H["h"]
 
-    style X fill:#1de9b6,stroke:#0db99a,color:#fff
-    style G fill:#12a889,stroke:#0a7d68,color:#fff
-    style H fill:#1de9b6,stroke:#0db99a,color:#000
+    style X fill:#e0faf4,stroke:#1de9b6
+    style G fill:#e0faf4,stroke:#1de9b6
+    style H fill:#e0faf4,stroke:#1de9b6
 ```
 
 If $x$ wiggles by 1:

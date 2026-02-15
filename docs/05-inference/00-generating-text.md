@@ -39,8 +39,8 @@ flowchart TD
     CHECK -->|"No"| APPEND["Append character"]
     APPEND --> GPT
 
-    style START fill:#1de9b6,stroke:#0db99a,color:#fff
-    style DONE fill:#1de9b6,stroke:#0db99a,color:#000
+    style START fill:#e0faf4,stroke:#1de9b6
+    style DONE fill:#e0faf4,stroke:#1de9b6
 ```
 
 === "Step 0"
