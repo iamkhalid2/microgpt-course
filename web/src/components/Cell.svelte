@@ -176,8 +176,8 @@
   .ok { color: var(--good); text-transform: none; letter-spacing: 0; font-weight: 700; }
   .sp { flex: 1; }
   .ed.hidden, .bar.hidden { display: none; }
-  .mode { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 999px; overflow: hidden; text-transform: none; letter-spacing: 0; }
-  .mode button { border: 0; background: var(--surface); color: var(--ink-2); padding: 0.25rem 0.75rem; font-size: 0.78rem; }
+  .mode { flex: none; display: inline-flex; border: 1px solid var(--line-strong); border-radius: 999px; overflow: hidden; text-transform: none; letter-spacing: 0; }
+  .mode button { white-space: nowrap; border: 0; background: var(--surface); color: var(--ink-2); padding: 0.25rem 0.75rem; font-size: 0.78rem; }
   .mode button.on { background: var(--accent); color: var(--on-accent); }
   .read { margin-top: 0.8rem; font-family: var(--font-body); font-size: 0.98rem; }
   .read summary { cursor: pointer; color: var(--ink-2); font-family: var(--font-ui); font-size: 0.85rem; }

@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { makeModel, generate } from '../src/lib/gpt.js';
+import { makeModel, generate } from '../src/lib/transformer.js';
 import { parseDocs } from '../src/lib/stats.js';
 import { makeRng } from '../src/lib/rng.js';
 

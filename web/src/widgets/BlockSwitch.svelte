@@ -2,7 +2,7 @@
   import { getContext, onMount } from 'svelte';
   import { mdl, M, loadModel } from '../lib/model.svelte.js';
   import { data } from '../lib/data.svelte.js';
-  import { modelLoss } from '../lib/gpt.js';
+  import { modelLoss } from '../lib/transformer.js';
   import { ablationSample, lossBigram } from '../lib/stats.js';
   import DataGate from './DataGate.svelte';
 

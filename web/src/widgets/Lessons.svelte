@@ -1,7 +1,7 @@
 <script>
   import { getContext, onMount } from 'svelte';
   import { mdl, M, loadModel } from '../lib/model.svelte.js';
-  import { forward } from '../lib/gpt.js';
+  import { forward } from '../lib/transformer.js';
 
   // One name is not one lesson but one lesson PER POSITION: at each step the model is shown the true letters so far
   // and asked for the next one. The loss for the name is the average of these.
@@ -56,7 +56,7 @@
   .ctl { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.8rem; } label { color: var(--ink-2); display: flex; gap: 0.5rem; align-items: center; font-size: 0.85rem; }
   input { font-family: var(--font-mono); padding: 0.3rem 0.6rem; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); width: 9rem; } select { padding: 0.3rem 0.5rem; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); }
   .tbl { display: grid; gap: 3px; } .r { display: grid; grid-template-columns: 2rem 7rem 7rem 8rem 1fr; gap: 0.6rem; align-items: center; padding: 0.3rem 0.6rem; border-radius: 8px; background: var(--surface-2); font-size: 0.85rem; }
-  @media (max-width: 700px) { .r { grid-template-columns: 1.5rem 4rem 4rem 4rem 1fr; gap: 0.3rem; font-size: 0.78rem; } }
+  @media (max-width: 700px) { .r { grid-template-columns: 1.3rem 3.4rem 3.6rem 5.2rem minmax(0, 1fr); gap: 0.3rem; font-size: 0.78rem; } .r.head { font-size: 0.6rem; letter-spacing: 0; align-items: end; } }
   .r.head { background: none; color: var(--ink-3); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; } .r.skip { opacity: 0.5; } .big { font-size: 1.05rem; }
   .bar { position: relative; height: 18px; background: var(--surface); border-radius: 4px; overflow: hidden; } .fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--series-2); border-radius: 0 4px 4px 0; } .bar em { position: relative; font-style: normal; font-size: 0.74rem; padding-left: 0.4rem; line-height: 18px; }
   .r.tot { background: var(--accent-wash); margin-top: 0.3rem; } .tot strong { font-size: 1.15rem; font-variant-numeric: tabular-nums; }

@@ -1,6 +1,6 @@
 <script>
   import { getContext } from 'svelte';
-  import { countParams } from '../lib/gpt.js';
+  import { countParams } from '../lib/transformer.js';
 
   // Where do the dials live? Change the design and watch the count. At the defaults you get microgpt's 4,064.
   const beat = getContext('beat');

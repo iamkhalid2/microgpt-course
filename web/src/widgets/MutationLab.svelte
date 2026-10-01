@@ -5,7 +5,7 @@
   import { patchSource, parseLine, loadSource } from '../lib/liveTrain.js';
   import { DATASETS, cleanList } from '../lib/datasets.js';
   import { data } from '../lib/data.svelte.js';
-  import { countParams } from '../lib/gpt.js';
+  import { countParams } from '../lib/transformer.js';
 
   // Change the model or the data, train the REAL file, and compare runs.
   const beat = getContext('beat');

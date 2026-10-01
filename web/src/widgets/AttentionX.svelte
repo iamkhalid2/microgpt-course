@@ -1,7 +1,7 @@
 <script>
   import { getContext, onMount } from 'svelte';
   import { mdl, M, loadModel } from '../lib/model.svelte.js';
-  import { forward } from '../lib/gpt.js';
+  import { forward } from '../lib/transformer.js';
   import AttMatrix from './AttMatrix.svelte';
 
   // The REAL model's attention weights for any name you type. mode "single" shows one head; "all" shows all four.

@@ -1,7 +1,7 @@
 <script>
   import { getContext, onMount } from 'svelte';
   import { mdl, M, loadModel } from '../lib/model.svelte.js';
-  import { forward } from '../lib/gpt.js';
+  import { forward } from '../lib/transformer.js';
 
   // One letter's whole journey through the real model: every list of 16 numbers along the way, as a strip of coloured cells.
   const beat = getContext('beat');

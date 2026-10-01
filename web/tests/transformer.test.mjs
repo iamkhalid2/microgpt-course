@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { makeModel, forward, nextProbs, generate, countParams } from '../src/lib/gpt.js';
+import { makeModel, forward, nextProbs, generate, countParams } from '../src/lib/transformer.js';
 import { makeRng } from '../src/lib/rng.js';
 
 const data = JSON.parse(readFileSync(new URL('../public/data/weights.json', import.meta.url), 'utf8'));

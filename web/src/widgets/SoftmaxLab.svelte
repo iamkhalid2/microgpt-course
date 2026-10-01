@@ -51,7 +51,7 @@
 <style>
   .grid { display: grid; grid-template-columns: 2.2rem 1.2fr 1fr 1fr; gap: 0.7rem; align-items: center; padding: 0.25rem 0; }
   .grid.head { color: var(--ink-3); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; border-bottom: 1px solid var(--line); }
-  @media (max-width: 760px) { .grid { grid-template-columns: 1.8rem 1fr 1fr; } .grid > :nth-child(3) { display: none; } }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1.8rem minmax(0, 1fr) minmax(0, 1fr); } .grid > :nth-child(3) { display: none; } .grid.head > :first-child { visibility: hidden; } .sl input { min-width: 40px; } output { min-width: 2.4rem; } }
   .lt { font-size: 1.1rem; text-align: center; }
   .sl { display: flex; gap: 0.5rem; align-items: center; }
   .sl input { flex: 1; accent-color: var(--accent); min-width: 80px; }

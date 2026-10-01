@@ -1,6 +1,6 @@
 // Loads the real trained weights (exported by tools/train_export.py) and exposes the model at each checkpoint.
 // `mdl.status` is reactive; the heavy numbers live in the plain object `M` (no proxies, so forward() stays fast).
-import { makeModel } from './gpt.js';
+import { makeModel } from './transformer.js';
 
 export const mdl = $state({ status: 'idle', error: null });
 export const M = { cfg: null, models: {}, steps: [], ref: null };

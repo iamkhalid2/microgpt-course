@@ -171,6 +171,8 @@ input, textarea, select { font-family: var(--font-ui); }
 
 /* Chart text is recessive; values wear ink, never series colour */
 .axis-text { font-family: var(--font-ui); font-size: 11px; fill: var(--ink-3); }
+/* charts are drawn in a fixed viewBox and shrink with the screen; keep their labels legible on phones */
+@media (max-width: 560px) { svg .axis-text { font-size: 17px; } }
 .tip {
   position: fixed; z-index: 80; pointer-events: none; font-family: var(--font-ui); font-size: 0.8rem;
   background: var(--ink); color: var(--bg); padding: 0.4rem 0.6rem; border-radius: 8px; box-shadow: var(--shadow);

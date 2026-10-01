@@ -2,7 +2,7 @@
   import { getContext, onMount } from 'svelte';
   import { mdl, M, loadModel } from '../lib/model.svelte.js';
   import { data } from '../lib/data.svelte.js';
-  import { nextProbs, generate } from '../lib/gpt.js';
+  import { nextProbs, generate } from '../lib/transformer.js';
   import { makeRng } from '../lib/rng.js';
 
   // Temperature, with the REAL model. Top: how the next-letter probabilities reshape. Bottom: what 300 generated names look like.
@@ -70,7 +70,7 @@
 </div>
 
 <style>
-  .ctl { display: flex; gap: 0.8rem 1.4rem; flex-wrap: wrap; align-items: center; margin-bottom: 0.9rem; } label { color: var(--ink-2); display: flex; gap: 0.5rem; align-items: center; font-size: 0.85rem; } .t input { accent-color: var(--accent); width: 190px; }
+  .ctl { display: flex; gap: 0.8rem 1.4rem; flex-wrap: wrap; align-items: center; margin-bottom: 0.9rem; } label { color: var(--ink-2); display: flex; gap: 0.5rem; align-items: center; font-size: 0.85rem; } .t { max-width: 100%; } .t input { accent-color: var(--accent); width: 190px; min-width: 0; flex: 1; max-width: 190px; }
   input[aria-label='Name so far'] { font-family: var(--font-mono); padding: 0.3rem 0.6rem; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); width: 7rem; } select { padding: 0.3rem 0.5rem; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); }
   .h { font-weight: 600; font-size: 0.85rem; margin-bottom: 0.4rem; } .h.gen { margin-top: 1rem; } .r { display: grid; grid-template-columns: 1.6rem 1fr 3rem; gap: 0.5rem; align-items: center; margin-bottom: 3px; } .ch { text-align: center; }
   .bar { position: relative; height: 16px; background: var(--surface-2); border-radius: 4px; overflow: hidden; } .pale { position: absolute; left: 0; top: 0; bottom: 0; background: var(--ink-3); opacity: 0.28; } .fill { position: absolute; left: 0; top: 4px; bottom: 4px; background: var(--series-1); border-radius: 0 3px 3px 0; transition: width 0.15s; } .v { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; font-size: 0.85rem; }

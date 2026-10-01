@@ -31,7 +31,7 @@
   .tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
   .tabs button { padding: 0.3rem 0.8rem; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2); font-size: 0.8rem; }
   .tabs button.on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; }
   @media (max-width: 760px) { .cols { grid-template-columns: minmax(0, 1fr); } }
   .h { color: var(--ink-3); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; margin-bottom: 0.3rem; }
   pre { margin: 0; background: var(--code-bg); border-radius: 10px; padding: 0.7rem 0.9rem; font-size: 0.78rem; overflow-x: auto; min-height: 7.5rem; }

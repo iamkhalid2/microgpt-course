@@ -33,8 +33,9 @@
 <style>
   .q { color: var(--ink-2); margin: 0 0 0.7rem; }
   .tbl { display: grid; gap: 0.3rem; }
-  .r { display: grid; grid-template-columns: 6rem repeat(3, 1fr) 5rem; gap: 0.6rem; align-items: center; padding: 0.35rem 0.6rem; border-radius: 10px; background: var(--surface-2); }
+  .r { display: grid; grid-template-columns: 6rem repeat(3, minmax(0, 1fr)) 5rem; gap: 0.6rem; align-items: center; padding: 0.35rem 0.6rem; border-radius: 10px; background: var(--surface-2); }
   .r.head { background: none; font-size: 0.78rem; color: var(--ink-3); align-items: end; }
+  .r > * { min-width: 0; }
   .r.head span { display: flex; flex-direction: column; gap: 0.15rem; }
   .r.head input { accent-color: var(--accent); width: 100%; } .r.head b { color: var(--ink); font-size: 0.95rem; }
   .r.best { background: var(--good-wash); }
@@ -42,5 +43,5 @@
   .sc { text-align: right; font-weight: 700; }
   .code { margin-top: 0.8rem; font-size: 0.74rem; background: var(--code-bg); padding: 0.45rem 0.7rem; border-radius: 8px; overflow-x: auto; white-space: nowrap; }
   .note { margin-top: 0.7rem; color: var(--ink-2); font-size: 0.85rem; }
-  @media (max-width: 640px) { .r { grid-template-columns: 4.6rem repeat(3, 1fr) 3.6rem; gap: 0.3rem; } }
+  @media (max-width: 640px) { .r { grid-template-columns: 4.2rem repeat(3, minmax(0, 1fr)) 3rem; gap: 0.3rem; padding: 0.35rem 0.4rem; } .r.head span { font-size: 0.66rem; line-height: 1.2; overflow-wrap: anywhere; } .wi { padding: 0.25rem 0.2rem; } }
 </style>

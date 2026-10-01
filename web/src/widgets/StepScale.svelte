@@ -30,6 +30,6 @@
 
 <style>
   .sl label { display: flex; gap: 0.7rem; align-items: center; color: var(--ink-2); margin-bottom: 0.3rem; } .sl input { accent-color: var(--accent); flex: 1; max-width: 22rem; } .sl strong { min-width: 5rem; font-variant-numeric: tabular-nums; }
-  .t { width: 100%; border-collapse: collapse; margin: 0.8rem 0; font-variant-numeric: tabular-nums; } .t td { padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--line); } .t thead td { color: var(--ink-3); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; } .t .r { font-weight: 700; } .t tr.ad td { background: var(--accent-wash); }
+  .t { width: 100%; border-collapse: collapse; margin: 0.8rem 0; font-variant-numeric: tabular-nums; } .t td { padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--line); } .t tbody td:not(:first-child) { white-space: nowrap; } .t thead td { color: var(--ink-3); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; } .t .r { font-weight: 700; } .t tr.ad td { background: var(--accent-wash); }
   .cap { color: var(--ink-2); font-size: 0.85rem; }
 </style>

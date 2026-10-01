@@ -33,7 +33,7 @@
 
   <ol class="steps">
     {#each plain.lines as l, i}
-      <li style="margin-left:{(l.depth ?? 0) * 1.5}rem" class:nested={(l.depth ?? 0) > 0}>
+      <li style="--d:{l.depth ?? 0}" class:nested={(l.depth ?? 0) > 0}>
         {#if l.blank && !picks[i]}
           <div class="ask"><span class="q">?</span>{l.ask}</div>
           <div class="opts">
@@ -67,6 +67,8 @@
   .steps { list-style: none; margin: 0; padding: 0; counter-reset: s; }
   li { position: relative; padding: 0.45rem 0.7rem 0.45rem 2.2rem; margin-bottom: 0.3rem; border-radius: 10px; background: var(--code-bg); counter-increment: s; }
   li::before { content: counter(s); position: absolute; left: 0.7rem; top: 0.55rem; width: 1.15rem; height: 1.15rem; border-radius: 50%; background: var(--surface); color: var(--ink-3); font-size: 0.68rem; font-weight: 700; display: grid; place-items: center; }
+  li { margin-left: calc(var(--d, 0) * 1.5rem); }
+  @media (max-width: 560px) { li { margin-left: calc(var(--d, 0) * 0.7rem); padding-right: 0.5rem; } }
   li.nested { border-left: 3px solid var(--line-strong); }
   .row { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
   .en { font-family: var(--font-body); font-size: 1.02rem; }

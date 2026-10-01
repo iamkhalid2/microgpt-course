@@ -4,6 +4,9 @@
   import { progress } from '../lib/progress.svelte.js';
   import { href } from '../lib/router.svelte.js';
   import { ui } from '../lib/ui.svelte.js';
+  // Loaded on its own so that if the 3D piece can't load (a blocker, an old browser), the rest of the page still does.
+  let Hero3D = $state(null);
+  onMount(() => { import('./Hero3D.svelte').then((m) => { Hero3D = m.default; }).catch(() => {}); });
 
   // Hero ticker: real names from the recorded microgpt run, at the training step they were made.
   let replay = $state(null);
@@ -40,6 +43,7 @@
 
 <div class="home">
   <section class="hero">
+   <div class="htext">
     <div class="eyebrow">A first-principles course · no math degree · no Python mastery</div>
     <h1>Invent a GPT.</h1>
     <p class="lead">Andrej Karpathy wrote a complete language model in <strong>200 lines of plain Python</strong>. You're going to reinvent it, one broken idea at a time, without leaving this page. By the end you won't feel like you studied it. You'll feel like you could have come up with it.</p>
@@ -54,6 +58,8 @@
       <a class="btn primary big" href={href(`ch/${next.num}`)}>{started ? `Continue: ${next.title}` : 'Start with The Trick'} →</a>
       <button class="btn big" onclick={() => (ui.fileOpen = true)}>Peek at the 200 lines</button>
     </div>
+   </div>
+   <div class="hviz">{#if Hero3D}<Hero3D />{/if}</div>
   </section>
 
   <section class="loop">
@@ -90,13 +96,16 @@
   </section>
 
   <footer class="foot">
-    <p>Based on <a href="https://github.com/karpathy/microgpt">microgpt.py</a> by Andrej Karpathy. Progress is saved only in this browser. Every number on this site is computed by code that actually ran, and the JavaScript that powers the toys is tested against independent Python.</p>
+    <p>Based on <a href="https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95">microgpt.py</a> by Andrej Karpathy. Progress is saved only in this browser. Every number on this site is computed by code that actually ran, and the JavaScript that powers the toys is tested against independent Python.</p>
   </footer>
 </div>
 
 <style>
   .home { max-width: 62rem; margin: 0 auto; padding: 3.2rem 1.25rem 6rem; }
-  .eyebrow { font-family: var(--font-ui); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; margin-bottom: 1rem; }
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2.4rem; align-items: start; }
+  .hviz { width: 100%; max-width: 30rem; margin-inline: auto; }
+  @media (min-width: 960px) { .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 25.5rem); gap: 2.2rem; } .hviz { margin: 1.4rem 0 0; max-width: none; } }
+  .eyebrow { font-family: var(--font-ui); font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; margin-bottom: 1rem; }
   h1 { font-size: clamp(3rem, 9vw, 5.6rem); margin-bottom: 0.3em; }
   .lead { font-size: 1.35rem; max-width: 41rem; color: var(--ink-2); }
   .ticker { display: inline-block; margin: 1.4rem 0 1.6rem; min-width: min(20rem, 100%); text-align: center; padding: 1.2rem 2rem; }
@@ -108,7 +117,9 @@
   .big { font-size: 0.95rem; padding: 0.75rem 1.3rem; text-decoration: none; display: inline-block; }
   .loop, .map { margin-top: 4.5rem; }
   .sub { color: var(--ink-2); max-width: 40rem; }
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.8rem; margin-top: 1.2rem; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 1.2rem; }
+  @media (max-width: 720px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 420px) { .cards { grid-template-columns: 1fr; } }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; font-family: var(--font-ui); }
   .card .n { font-size: 0.72rem; color: var(--accent-strong); font-weight: 700; }
   .card h3 { font-size: 1.15rem; margin: 0.1rem 0 0.3rem; }
@@ -121,7 +132,7 @@
   .row { display: flex; gap: 0.9rem; padding: 0.6rem 0.8rem; border-radius: 12px; text-decoration: none; color: inherit; margin-left: 0.6rem; }
   li.ready .row:hover { background: var(--surface); box-shadow: var(--shadow); }
   li:not(.ready) { opacity: 0.55; }
-  .dot { flex: none; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-ui); font-weight: 700; font-size: 0.85rem; background: var(--surface); border: 2px solid var(--line-strong); margin-left: -2.55rem; margin-right: 0.3rem; }
+  .dot { flex: none; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-ui); font-weight: 700; font-size: 0.85rem; background: var(--surface); border: 2px solid var(--line-strong); margin-left: -3.45rem; margin-right: 0.3rem; position: relative; }
   li.ready .dot { border-color: var(--accent); color: var(--accent-strong); }
   li.done .dot { background: var(--good); border-color: var(--good); color: #fff; }
   .meta { display: flex; flex-direction: column; }

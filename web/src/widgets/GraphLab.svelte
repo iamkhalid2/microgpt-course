@@ -43,7 +43,7 @@
     {#each presets as p}<button class="chip" class:on={pick === p} onclick={() => choose(p)}>{PRESETS[p].title}</button>{/each}
   </div>
 
-  <svg viewBox="0 0 {W} {H}" class="g" role="img" aria-label="Computation graph with values and slopes">
+  <div class="gscroll"><svg viewBox="0 0 {W} {H}" class="g" role="img" aria-label="Computation graph with values and slopes">
     <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill: var(--ink-3);" /></marker></defs>
     {#each edges as e}
       {@const a = P(e.from)}
@@ -62,7 +62,7 @@
         {/if}
       </g>
     {/each}
-  </svg>
+  </svg></div>
 
   <div class="ctl">
     {#each preset.edit as id}
@@ -90,7 +90,8 @@
   .top { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
   .chip { padding: 0.3rem 0.8rem; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2); font-size: 0.8rem; }
   .chip.on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-  .g { width: 100%; height: auto; display: block; background: var(--surface-2); border-radius: 12px; }
+  .gscroll { overflow-x: auto; border-radius: 12px; }
+  .g { min-width: 520px; width: 100%; height: auto; display: block; background: var(--surface-2); border-radius: 12px; }
   .nl { font-family: var(--font-mono); font-size: 12px; fill: var(--ink); }
   .nv { font-family: var(--font-mono); font-size: 12px; fill: var(--ink-2); font-weight: 700; }
   .ng { font-family: var(--font-ui); font-size: 11.5px; fill: var(--pain); font-weight: 700; }

@@ -1,7 +1,7 @@
 <script>
   import { getContext, onMount } from 'svelte';
   import { mdl, M, loadModel } from '../lib/model.svelte.js';
-  import { forward } from '../lib/gpt.js';
+  import { forward } from '../lib/transformer.js';
   import { rms } from '../lib/deep.js';
 
   // The residual stream of the real model: how big is what the blocks ADD, compared with what is already there?

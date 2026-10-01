@@ -1,7 +1,7 @@
 <script>
   import { getContext, onMount } from 'svelte';
   import { mdl, M, loadModel } from '../lib/model.svelte.js';
-  import { forward } from '../lib/gpt.js';
+  import { forward } from '../lib/transformer.js';
 
   // The 64 "neurons" of the real model's MLP at one position of a name you type. Most are exactly zero.
   const beat = getContext('beat');

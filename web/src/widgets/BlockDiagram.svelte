@@ -12,7 +12,7 @@
 </script>
 <div class="bd">
   <div class="t">{title}</div>
-  <svg viewBox="0 0 700 150" role="img" aria-label="Flow: embedding, norm, attention block, MLP block, output head, with skip lanes">
+  <div class="bsc"><svg viewBox="0 0 700 150" role="img" aria-label="Flow: embedding, norm, attention block, MLP block, output head, with skip lanes">
     <defs><marker id="bda" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" style="fill: var(--ink-3);" /></marker></defs>
     <!-- main lane -->
     <path d="M110 92 H126 M196 92 H214 L214 48 H230 M360 48 H376 L376 92 H394 L394 48 H410 M540 48 H556 L556 92 H590" fill="none" stroke="var(--line-strong)" stroke-width="1.6" marker-end="url(#bda)" />
@@ -26,9 +26,10 @@
       <text x={b.x + b.w / 2} y={b.y + 19} text-anchor="middle" class="b1">{b.t1}</text><text x={b.x + b.w / 2} y={b.y + 34} text-anchor="middle" class="b2">{b.t2}</text>
     {/each}
     <text x="290" y="132" class="b2" text-anchor="middle">skip lane: the block's output is ADDED to what was already there</text>
-  </svg>
+  </svg></div>
 </div>
 <style>
   .bd { background: var(--surface-2); border-radius: 12px; padding: 0.6rem 0.8rem; } .t { font-size: 0.78rem; color: var(--ink-2); font-weight: 600; margin-bottom: 0.2rem; }
-  svg { width: 100%; height: auto; display: block; } .b1 { font-family: var(--font-ui); font-size: 11px; font-weight: 600; fill: var(--ink); } .b2 { font-family: var(--font-mono); font-size: 9.5px; fill: var(--ink-3); } .plus { font-family: var(--font-ui); font-size: 14px; font-weight: 700; fill: var(--ink); }
+  .bsc { overflow-x: auto; }
+  svg { min-width: 560px; width: 100%; height: auto; display: block; } .b1 { font-family: var(--font-ui); font-size: 11px; font-weight: 600; fill: var(--ink); } .b2 { font-family: var(--font-mono); font-size: 9.5px; fill: var(--ink-3); } .plus { font-family: var(--font-ui); font-size: 14px; font-weight: 700; fill: var(--ink); }
 </style>
