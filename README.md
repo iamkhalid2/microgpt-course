@@ -1,62 +1,47 @@
-# MicroGPT: A First-Principles Course
+# Invent a GPT: a first-principles course
 
-[![GitHub Pages](https://img.shields.io/badge/📖_Read_the_Course-iamkhalid2.github.io/microgpt--course-1de9b6)](https://iamkhalid2.github.io/microgpt-course/)
+An interactive course that teaches [`microgpt.py`](./microgpt.py), Andrej Karpathy's complete GPT in about 200 lines of dependency-free Python, to someone who knows **no maths and only a little Python**. The goal is the one from Burn Math Class: you finish thinking *"I could have come up with that."*
 
-## What Is This?
+You don't read about a GPT, you **reinvent** one. Each chapter starts with a problem you can feel (letters are just shapes to a computer; a counting table can't improve; the chain rule by hand is hopeless…), lets you guess, play with a widget, build the fix, break it, and then **bank** it: the matching lines of the real `microgpt.py` light up in a fog-of-war copy of the file. By the end, all 160 lines of code are yours, and the last chapter hands you a blank editor to rebuild it from nothing.
 
-A comprehensive, self-contained course that reverse-engineers **every single line** of Andrej Karpathy's [`microgpt.py`](./microgpt.py) — a complete GPT language model in just 200 lines of pure Python, with no external dependencies.
+Everything runs in your browser (Python included, via Pyodide). Nothing is uploaded.
 
-By the end of this course, you will understand exactly how a language model works: from raw text to trained neural network to generated output. No magic, no hand-waving.
+## The course
 
-**👉 [Read the course →](https://iamkhalid2.github.io/microgpt-course/)**
+| Act | Chapters | You invent |
+|-----|----------|------------|
+| Prologue | 0 | the destination: watch the real file train |
+| I | 1–3 | tokens, probabilities and a counting model, the loss |
+| II | 4–6 | dials, slopes, gradient descent, the chain rule |
+| III | 7–9 | an autograd engine, softmax, embeddings and linear layers |
+| IV | 10–14 | attention, heads, the MLP, skip lanes, RMSNorm, the whole `gpt()` |
+| V | 15–19 | Adam, the training loop, sampling, reading the full file, a blank-page rebuild |
 
-## Based On
+- **Two routes for every exercise.** Plain English recipes (pick the right step; the real Python sits beside it) or the Python editor. Both count; both run the same hidden check.
+- **Everything is measured.** Every number in the text came from running real code and is pinned by a test where feasible. The in-browser model is checked against Python reference outputs.
+- **Real training, live.** Chapter 16 trains the actual `microgpt.py` in your browser; Chapter 19 lets you train it on dinosaurs, cities or your own list.
+- Glossary, light/dark themes, reader mode, mobile layout.
 
-[microgpt.py](https://github.com/karpathy/microgpt) by **Andrej Karpathy** — a minimal but fully functional character-level GPT model implementing:
-
-- A custom autograd engine (automatic differentiation)
-- A Transformer architecture (attention, MLP, residual connections)
-- A training loop with the Adam optimizer
-- Text generation with temperature-controlled sampling
-
-All in **200 lines** using only the standard library.
-
-## Course Structure
-
-| Module | Topic | Lines in microgpt.py |
-|--------|-------|:--------------------:|
-| **00** | The Big Picture | Overview |
-| **01** | Data & Tokenization | 14–27 |
-| **02** | Calculus & Autograd | 29–72 |
-| **03** | The Architecture | 74–144 |
-| **04** | Training | 146–184 |
-| **05** | Inference & Generation | 186–200 |
-| **Appendix** | Glossary & Math Refresher | — |
-
-**33 lessons** across 6 modules, featuring Mermaid diagrams, KaTeX math, interactive tabs, and styled admonitions — built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
-
-## Prerequisites
-
-- **Math:** 10th-grade level (algebra, exponents). A [math refresher](https://iamkhalid2.github.io/microgpt-course/appendix/math-refresher/) is included.
-- **Programming:** Basic Python (variables, loops, functions, lists).
-- **Machine Learning:** Zero prior knowledge required.
-
-## Local Development
+## Run it
 
 ```bash
-pip install mkdocs-material pymdown-extensions mkdocs-minify-plugin
-mkdocs serve
+cd web
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # static site in web/dist
+npm test         # unit tests
 ```
 
-Then open `http://127.0.0.1:8000/`.
+See [`web/README.md`](./web/README.md) for the architecture, the tests and how the recorded data is regenerated. A GitHub Actions workflow (`.github/workflows/deploy.yml`) builds `web/` and publishes it to GitHub Pages.
 
-## Who Is This For?
+## Repo layout
 
-- **Curious developers** who want to understand what's inside an LLM
-- **Students** looking for a ground-up explanation of Transformers
-- **Engineers** who use ML frameworks but want to peek under the hood
-- **Anyone** who has asked "but how does it *actually* work?"
+| Path | What it is |
+|------|------------|
+| `microgpt.py`, `input.txt` | Karpathy's file and its dataset (32,033 names). The site serves these exact files. |
+| `web/` | The interactive course (Vite + Svelte 5). |
+| `docs/`, `mkdocs.yml` | The original text-only version of the course (MkDocs). Kept for reference; no longer built. |
 
----
+## Credits
 
-*Course content authored with the assistance of **Claude** (Anthropic).*
+[`microgpt.py`](https://github.com/karpathy/microgpt) is by **Andrej Karpathy**. The course was written with the assistance of **Claude** (Anthropic).

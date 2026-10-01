@@ -1,0 +1,6 @@
+{
+  "note": "Mean training loss over each window of 250 steps, from one unmodified run of microgpt.py with num_steps=3000 (seed 42). Every step studies a name it has not seen before, so this doubles as an honest held-out estimate. Reproduce with tools/record_long_run.py.",
+  "window": 250,
+  "steps": [250, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000],
+  "meanLoss": [2.6692, 2.5149, 2.5218, 2.4005, 2.5029, 2.4719, 2.3985, 2.4254, 2.4079, 2.3662, 2.3552, 2.3557]
+}

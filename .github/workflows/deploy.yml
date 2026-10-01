@@ -1,4 +1,4 @@
-name: Deploy MkDocs to GitHub Pages
+name: Deploy the course to GitHub Pages
 
 on:
   push:
@@ -21,22 +21,28 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    defaults:
+      run:
+        working-directory: web
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          python-version: 3.x
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
 
       - name: Install dependencies
-        run: |
-          pip install mkdocs-material
-          pip install mkdocs-minify-plugin
+        run: npm ci
+
+      - name: Unit tests
+        run: npm test
 
       - name: Build site
-        run: mkdocs build
+        run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -44,7 +50,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'site'
+          path: web/dist
 
       - name: Deploy to GitHub Pages
         id: deployment

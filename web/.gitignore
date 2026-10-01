@@ -1,0 +1,5 @@
+node_modules/
+dist/
+public/data/input.txt
+public/data/microgpt.py
+.DS_Store

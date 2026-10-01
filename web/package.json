@@ -1,0 +1,28 @@
+{
+  "name": "invent-a-gpt",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "sync-data": "node tools/sync-data.mjs",
+    "dev": "npm run sync-data && vite",
+    "build": "npm run sync-data && vite build",
+    "preview": "vite preview",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "playwright-core": "^1.63.0",
+    "svelte": "^5.57.1",
+    "vite": "^8.3.1"
+  },
+  "dependencies": {
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/lang-python": "^6.2.1",
+    "@codemirror/language": "^6.12.4",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.13",
+    "@lezer/highlight": "^1.2.5",
+    "codemirror": "^6.0.2"
+  }
+}
